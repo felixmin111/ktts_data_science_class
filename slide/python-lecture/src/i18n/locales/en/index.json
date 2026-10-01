@@ -1,0 +1,92 @@
+{
+  "app": { "name": "Python Lecture", "tagline": "Learn Python by seeing what happens underneath." },
+  "nav": {
+    "home": "Home",
+    "lesson": "Lesson",
+    "lessons": "Foundations",
+    "dataScience": "Data Science",
+    "games": "Games",
+    "playground": "Playground"
+  },
+  "common": {
+    "start": "Start",
+    "continue": "Continue",
+    "comingSoon": "Coming soon",
+    "minutes": "{n} min",
+    "previous": "Previous",
+    "next": "Next",
+    "back": "Back",
+    "teacherMode": "Teacher mode"
+  },
+  "home": {
+    "heroTitle": "Talk to computers in Python",
+    "heroBody": "From your first print() to pandas and charts. Real-world analogies, real Python running in your browser, and games that make it stick.",
+    "startDay1": "Start Day 1",
+    "startDataScience": "Data Science track",
+    "playGames": "Play the games",
+    "lessonsTitle": "Lessons",
+    "gamesTitle": "Games",
+    "day": "Day {n}",
+    "progress": "{n}% explored"
+  },
+  "lesson": {
+    "contents": "Contents",
+    "teacherNotes": "Teacher notes",
+    "finished": "You reached the end of this lesson!",
+    "playGame": "Play a game",
+    "resetProgress": "Reset progress",
+    "notFound": "This lesson does not exist."
+  },
+  "code": {
+    "run": "Run",
+    "running": "Running…",
+    "reset": "Reset",
+    "copy": "Copy",
+    "copied": "Copied",
+    "input": "Input (one line per input() call)",
+    "output": "Output",
+    "expected": "Expected output",
+    "loadingPython": "Loading Python in your browser (first time only)…",
+    "loadingPackages": "Downloading {names} (first time only, can take ~20 s)…",
+    "pythonFailed": "Could not load Python. Check your internet connection and try again.",
+    "noOutput": "(no output)"
+  },
+  "quiz": {
+    "check": "Check",
+    "correct": "Correct!",
+    "wrong": "Not quite.",
+    "tryAgain": "Try again"
+  },
+  "game": {
+    "questions": "{n} questions",
+    "practises": "Day {n}",
+    "seconds": "{n}s each",
+    "best": "Best: {score}",
+    "noBest": "No score yet",
+    "play": "Play",
+    "playAgain": "Play again",
+    "allGames": "All games",
+    "score": "Score",
+    "streak": "Streak",
+    "question": "Question {current} / {total}",
+    "timeUp": "Time’s up!",
+    "correct": "Correct! +{points}",
+    "wrong": "Not quite.",
+    "answerWas": "Answer: {answer}",
+    "next": "Next",
+    "seeResults": "See results",
+    "finishedTitle": "Round complete",
+    "newBest": "New best score!",
+    "accuracy": "{correct} / {total} correct",
+    "bestStreak": "Best streak: {n}",
+    "review": "Review",
+    "quit": "Quit",
+    "keyboardHint": "Tip: press 1–4 to answer, Enter for next.",
+    "notFound": "This game does not exist."
+  },
+  "playground": {
+    "title": "Python playground",
+    "body": "Real Python 3, running entirely in your browser. Experiment freely."
+  },
+  "notFound": { "title": "Page not found", "body": "This page does not exist.", "home": "Go home" }
+}

@@ -1,0 +1,21 @@
+@use 'variables' as *;
+
+@mixin card($bg: $color-card) {
+  background: $bg;
+  border: 1px solid $color-line;
+  border-radius: $radius;
+}
+
+@mixin eyebrow($color: $color-blue) {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: $color;
+}
+
+@mixin mobile {
+  @media (max-width: $bp-md) {
+    @content;
+  }
+}
