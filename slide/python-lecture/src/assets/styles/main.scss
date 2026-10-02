@@ -42,6 +42,19 @@ kbd {
   font-size: 0.92em;
 }
 
+// Burmese stacks vowel signs above and below the line, so it needs more vertical room.
+html:lang(my) {
+  h1,
+  h2,
+  h3 {
+    line-height: 1.5;
+  }
+
+  p {
+    line-height: 1.9;
+  }
+}
+
 .container {
   width: 100%;
   max-width: $content-width;

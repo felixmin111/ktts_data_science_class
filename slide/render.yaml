@@ -1,0 +1,27 @@
+# Blueprint path in the GitHub repository: slide/render.yaml
+services:
+  - type: web
+    name: ktts-python-lecture
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerContext: ./slide
+    dockerfilePath: ./slide/Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: DB_URL
+        sync: false
+      - key: DB_USERNAME
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: TEACHER_EMAIL
+        sync: false
+      - key: TEACHER_PASSWORD
+        sync: false
+      - key: TEACHER_NAME
+        value: Teacher

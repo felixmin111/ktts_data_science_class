@@ -1,0 +1,53 @@
+{
+  "app": {
+    "name": "Python Lecture",
+    "tagline": "အောက်ခံမှာ ဘာဖြစ်နေလဲ မြင်ရင်း Python ကို လေ့လာပါ။"
+  },
+  "nav": {
+    "home": "ပင်မ",
+    "lesson": "သင်ခန်းစာ",
+    "lessons": "အခြေခံ",
+    "dataScience": "Data Science",
+    "games": "ဂိမ်းများ",
+    "playground": "Playground",
+    "history": "ကျွန်ုပ်၏ မှတ်တမ်း",
+    "teacher": "အတန်း dashboard",
+    "logout": "ထွက်မည်",
+    "account": "အကောင့်"
+  },
+  "common": {
+    "start": "စတင်မည်",
+    "continue": "ဆက်လုပ်မည်",
+    "comingSoon": "မကြာမီ လာမည်",
+    "minutes": "{n} မိနစ်",
+    "previous": "ရှေ့သို့",
+    "next": "နောက်သို့",
+    "back": "နောက်သို့ ပြန်",
+    "teacherMode": "ဆရာ မုဒ်",
+    "quickCheck": "အမြန် စစ်ဆေးချက်"
+  },
+  "notFound": {
+    "title": "စာမျက်နှာ မတွေ့ပါ",
+    "body": "ဤစာမျက်နှာ မရှိပါ။",
+    "home": "ပင်မသို့ သွားမည်"
+  },
+  "locale": {
+    "english": "English",
+    "myanmar": "မြန်မာ"
+  },
+  "errors": {
+    "VALIDATION_FAILED": "အမှတ်အသားပြထားတဲ့ အကွက်တွေကို စစ်ပြီး ထပ်ကြိုးစားပါ။",
+    "WEAK_PASSWORD": "အက္ခရာ တစ်လုံးနဲ့ ဂဏန်း တစ်လုံး အနည်းဆုံးပါတဲ့ စာလုံး 8–72 လုံး password ကို ရွေးပါ။",
+    "EMAIL_TAKEN": "ဒီ email နဲ့ အကောင့် ရှိပြီးသားပါ။ Login ဝင်ကြည့်ပါ။",
+    "INVALID_CREDENTIALS": "Email ဒါမှမဟုတ် password မှားနေပါတယ်။",
+    "ACCOUNT_LOCKED": "မှားယွင်းမှု များလွန်းလို့ ဒီအကောင့်ကို ၁၅ မိနစ် ပိတ်ထားပါတယ်။",
+    "INVALID_REFRESH_TOKEN": "Session ကုန်ဆုံးသွားပါပြီ။ ထပ်မံ login ဝင်ပါ။",
+    "UNAUTHORIZED": "ဆက်လုပ်ရန် login ဝင်ပါ။",
+    "FORBIDDEN": "ဒါကို လုပ်ခွင့် မရှိပါ။",
+    "NOT_FOUND": "မတွေ့ပါ။",
+    "RATE_LIMITED": "ဒီ network ကနေ ကြိုးစားမှု များလွန်းပါတယ်။ တစ်မိနစ် စောင့်ပြီး ထပ်ကြိုးစားပါ။",
+    "INTERNAL_ERROR": "Server မှာ တစ်ခုခု မှားသွားပါတယ်။ ထပ်ကြိုးစားပါ။",
+    "NETWORK_ERROR": "Server ကို ဆက်သွယ်လို့ မရပါ။ ချိတ်ဆက်မှုကို စစ်ပြီး ထပ်ကြိုးစားပါ။",
+    "SERVER_UNAVAILABLE": "အကောင့် server ကို ဆက်သွယ်လို့ မရပါ။ Backend run နေကြောင်း သေချာစစ်ပြီး ထပ်ကြိုးစားပါ။"
+  }
+}

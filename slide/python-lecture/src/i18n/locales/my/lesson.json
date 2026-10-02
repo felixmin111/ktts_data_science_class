@@ -1,0 +1,16 @@
+{
+  "contents": "မာတိကာ",
+  "teacherNotes": "ဆရာအတွက် မှတ်စု",
+  "finished": "ဒီသင်ခန်းစာ ပြီးဆုံးပါပြီ!",
+  "playGame": "ဂိမ်းကစားမည်",
+  "resetProgress": "တိုးတက်မှု ပြန်စမည်",
+  "notFound": "ဤသင်ခန်းစာ မရှိပါ။",
+  "analogy": "နေ့စဉ်ဘဝ ဥပမာ · {title}",
+  "case": {
+    "label": "လက်တွေ့ ဖြစ်ရပ် · {domain}",
+    "problem": "ပြဿနာ",
+    "data": "Data",
+    "method": "နည်းလမ်း",
+    "outcome": "ရလဒ်"
+  }
+}

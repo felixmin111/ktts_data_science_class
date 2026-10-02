@@ -1,0 +1,15 @@
+{
+  "run": "Run",
+  "running": "Run နေသည်…",
+  "reset": "ပြန်စမည်",
+  "copy": "ကူးမည်",
+  "copied": "ကူးပြီး",
+  "input": "Input (input() တစ်ခါခေါ်တိုင်း တစ်ကြောင်း)",
+  "output": "Output",
+  "expected": "မျှော်လင့်ထားသော output",
+  "loadingPython": "Browser ထဲသို့ Python ဖွင့်နေသည် (ပထမအကြိမ်သာ)…",
+  "loadingPackages": "{names} ကို download လုပ်နေသည် (ပထမအကြိမ်သာ၊ စက္ကန့် ~20 ကြာနိုင်သည်)…",
+  "pythonFailed": "Python ဖွင့်၍ မရပါ။ အင်တာနက် ချိတ်ဆက်မှုကို စစ်ပြီး ထပ်ကြိုးစားပါ။",
+  "noOutput": "(output မရှိပါ)",
+  "ariaLabel": "Python code"
+}

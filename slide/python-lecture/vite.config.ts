@@ -42,7 +42,11 @@ export default defineConfig({
   ],
   server: {
     port: 3100,
-    open: true
+    open: true,
+    // Same-origin API in development, so the SameSite=Strict refresh cookie is sent.
+    proxy: {
+      '/api': { target: process.env.API_PROXY_TARGET ?? 'http://localhost:8090', changeOrigin: false }
+    }
   },
   resolve: {
     alias: {

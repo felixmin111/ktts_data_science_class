@@ -7,6 +7,7 @@ const route = useRoute()
 const router = useRouter()
 const progress = useProgressStore()
 const { teacherMode } = storeToRefs(progress)
+const { isTeacher } = storeToRefs(useAuthStore())
 
 const lesson = computed(() => findLesson(String(route.params.lessonId)))
 const sections = computed(() => lesson.value?.sections ?? [])
@@ -76,7 +77,7 @@ onKeyStroke(['ArrowLeft', 'ArrowRight'], (event) => {
       </header>
 
       <a-alert
-        v-if="teacherMode && section.notes"
+        v-if="isTeacher && teacherMode && section.notes"
         type="warning"
         show-icon
         :message="t('lesson.teacherNotes')"

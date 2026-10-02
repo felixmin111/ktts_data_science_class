@@ -1,12 +1,19 @@
 {
-  "app": { "name": "Python Lecture", "tagline": "Learn Python by seeing what happens underneath." },
+  "app": {
+    "name": "Python Lecture",
+    "tagline": "Learn Python by seeing what happens underneath."
+  },
   "nav": {
     "home": "Home",
     "lesson": "Lesson",
     "lessons": "Foundations",
     "dataScience": "Data Science",
     "games": "Games",
-    "playground": "Playground"
+    "playground": "Playground",
+    "history": "My history",
+    "teacher": "Class dashboard",
+    "logout": "Log out",
+    "account": "Account"
   },
   "common": {
     "start": "Start",
@@ -16,77 +23,31 @@
     "previous": "Previous",
     "next": "Next",
     "back": "Back",
-    "teacherMode": "Teacher mode"
+    "teacherMode": "Teacher mode",
+    "quickCheck": "Quick check"
   },
-  "home": {
-    "heroTitle": "Talk to computers in Python",
-    "heroBody": "From your first print() to pandas and charts. Real-world analogies, real Python running in your browser, and games that make it stick.",
-    "startDay1": "Start Day 1",
-    "startDataScience": "Data Science track",
-    "playGames": "Play the games",
-    "lessonsTitle": "Lessons",
-    "gamesTitle": "Games",
-    "day": "Day {n}",
-    "progress": "{n}% explored"
+  "notFound": {
+    "title": "Page not found",
+    "body": "This page does not exist.",
+    "home": "Go home"
   },
-  "lesson": {
-    "contents": "Contents",
-    "teacherNotes": "Teacher notes",
-    "finished": "You reached the end of this lesson!",
-    "playGame": "Play a game",
-    "resetProgress": "Reset progress",
-    "notFound": "This lesson does not exist."
+  "locale": {
+    "english": "English",
+    "myanmar": "မြန်မာ"
   },
-  "code": {
-    "run": "Run",
-    "running": "Running…",
-    "reset": "Reset",
-    "copy": "Copy",
-    "copied": "Copied",
-    "input": "Input (one line per input() call)",
-    "output": "Output",
-    "expected": "Expected output",
-    "loadingPython": "Loading Python in your browser (first time only)…",
-    "loadingPackages": "Downloading {names} (first time only, can take ~20 s)…",
-    "pythonFailed": "Could not load Python. Check your internet connection and try again.",
-    "noOutput": "(no output)"
-  },
-  "quiz": {
-    "check": "Check",
-    "correct": "Correct!",
-    "wrong": "Not quite.",
-    "tryAgain": "Try again"
-  },
-  "game": {
-    "questions": "{n} questions",
-    "practises": "Day {n}",
-    "seconds": "{n}s each",
-    "best": "Best: {score}",
-    "noBest": "No score yet",
-    "play": "Play",
-    "playAgain": "Play again",
-    "allGames": "All games",
-    "score": "Score",
-    "streak": "Streak",
-    "question": "Question {current} / {total}",
-    "timeUp": "Time’s up!",
-    "correct": "Correct! +{points}",
-    "wrong": "Not quite.",
-    "answerWas": "Answer: {answer}",
-    "next": "Next",
-    "seeResults": "See results",
-    "finishedTitle": "Round complete",
-    "newBest": "New best score!",
-    "accuracy": "{correct} / {total} correct",
-    "bestStreak": "Best streak: {n}",
-    "review": "Review",
-    "quit": "Quit",
-    "keyboardHint": "Tip: press 1–4 to answer, Enter for next.",
-    "notFound": "This game does not exist."
-  },
-  "playground": {
-    "title": "Python playground",
-    "body": "Real Python 3, running entirely in your browser. Experiment freely."
-  },
-  "notFound": { "title": "Page not found", "body": "This page does not exist.", "home": "Go home" }
+  "errors": {
+    "VALIDATION_FAILED": "Please check the highlighted fields and try again.",
+    "WEAK_PASSWORD": "Choose a password of 8–72 characters with at least one letter and one digit.",
+    "EMAIL_TAKEN": "An account with this email already exists. Try logging in instead.",
+    "INVALID_CREDENTIALS": "Email or password is incorrect.",
+    "ACCOUNT_LOCKED": "Too many failed attempts. This account is locked for 15 minutes.",
+    "INVALID_REFRESH_TOKEN": "Your session has ended. Please log in again.",
+    "UNAUTHORIZED": "Please log in to continue.",
+    "FORBIDDEN": "You do not have permission to do that.",
+    "NOT_FOUND": "Not found.",
+    "RATE_LIMITED": "Too many attempts from this network. Wait a minute and try again.",
+    "INTERNAL_ERROR": "Something went wrong on the server. Please try again.",
+    "NETWORK_ERROR": "Cannot reach the server. Check your connection and try again.",
+    "SERVER_UNAVAILABLE": "Cannot reach the account server. Make sure the backend is running, then try again."
+  }
 }

@@ -1,7 +1,9 @@
 import en from './locales/en'
+import my from './locales/my'
 
 export enum Locale {
-  EN = 'en'
+  EN = 'en',
+  MY = 'my'
 }
 
 const i18n = createI18n({
@@ -11,7 +13,8 @@ const i18n = createI18n({
   missingWarn: false,
   fallbackWarn: false,
   messages: {
-    [Locale.EN]: en
+    [Locale.EN]: en,
+    [Locale.MY]: my
   }
 })
 

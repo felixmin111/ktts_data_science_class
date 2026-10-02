@@ -104,7 +104,7 @@ function onKeydown(event: KeyboardEvent) {
         spellcheck="false"
         autocapitalize="off"
         autocomplete="off"
-        aria-label="Python code"
+        :aria-label="t('code.ariaLabel')"
         @keydown="onKeydown"
       />
     </div>

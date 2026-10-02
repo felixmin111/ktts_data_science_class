@@ -1,0 +1,21 @@
+{
+  "title": "My learning history",
+  "lead": "Everything {name} has studied and played, saved to your account.",
+  "lessonsTitle": "Lessons",
+  "gamesTitle": "Game history",
+  "lesson": "Lesson",
+  "progress": "Progress",
+  "lastVisited": "Last opened",
+  "game": "Game",
+  "correct": "Correct",
+  "playedAt": "Played",
+  "best": "Best",
+  "noLessons": "No lessons opened yet.",
+  "noGames": "No games played yet.",
+  "stats": {
+    "lessonsStarted": "Lessons started",
+    "sectionsVisited": "Sections read",
+    "gamesPlayed": "Games played",
+    "accuracy": "Game accuracy"
+  }
+}

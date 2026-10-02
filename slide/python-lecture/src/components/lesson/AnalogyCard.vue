@@ -1,12 +1,13 @@
 <script setup lang="ts">
 defineProps<{ title: string; body: string }>()
+const { t } = useI18n()
 </script>
 
 <template>
   <aside class="analogy">
     <IconMdiLightbulbOnOutline class="analogy__icon" />
     <div>
-      <p class="analogy__label">Real-world analogy · {{ title }}</p>
+      <p class="analogy__label">{{ t('lesson.analogy', { title }) }}</p>
       <p class="analogy__body">{{ body }}</p>
     </div>
   </aside>

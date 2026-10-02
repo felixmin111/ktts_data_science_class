@@ -43,8 +43,8 @@ describe('scoreAnswer', () => {
 
 describe('rankFor', () => {
   it('ranks by accuracy', () => {
-    expect(rankFor(1).title).toBe('Pythonista')
-    expect(rankFor(0.2).title).toBe('Explorer')
+    expect(rankFor(1)).toBe('pythonista')
+    expect(rankFor(0.2)).toBe('explorer')
   })
 })
 

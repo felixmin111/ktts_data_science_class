@@ -1,0 +1,46 @@
+{
+  "questions": "{n} questions",
+  "practises": "Day {n}",
+  "seconds": "{n}s each",
+  "best": "Best: {score}",
+  "noBest": "No score yet",
+  "play": "Play",
+  "playAgain": "Play again",
+  "allGames": "All games",
+  "score": "Score",
+  "streak": "Streak",
+  "question": "Question {current} / {total}",
+  "timeUp": "Time’s up!",
+  "correct": "Correct! +{points}",
+  "wrong": "Not quite.",
+  "answerWas": "Answer: {answer}",
+  "next": "Next",
+  "seeResults": "See results",
+  "finishedTitle": "Round complete",
+  "newBest": "New best score!",
+  "accuracy": "{correct} / {total} correct",
+  "bestStreak": "Best streak: {n}",
+  "review": "Review",
+  "quit": "Quit",
+  "keyboardHint": "Tip: press 1–4 to answer, Enter for next.",
+  "notFound": "This game does not exist.",
+  "rank": {
+    "pythonista": {
+      "title": "Pythonista",
+      "message": "Outstanding — you think like the interpreter."
+    },
+    "detective": {
+      "title": "Code Detective",
+      "message": "Great instincts. Review the misses below."
+    },
+    "apprentice": {
+      "title": "Apprentice",
+      "message": "Good start — replay to lock it in."
+    },
+    "explorer": {
+      "title": "Explorer",
+      "message": "Every expert started here. Read the explanations and try again."
+    }
+  },
+  "saveFailed": "This round could not be saved to your account. Check your connection."
+}

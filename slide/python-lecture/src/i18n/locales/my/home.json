@@ -1,0 +1,12 @@
+{
+  "heroTitle": "Python ဖြင့် ကွန်ပျူတာနှင့် စကားပြောကြစို့",
+  "heroBody": "ပထမဆုံး print() မှ pandas နှင့် chart များအထိ။ နေ့စဉ်ဘဝ ဥပမာများ၊ browser ထဲမှာ တကယ် run နေတဲ့ Python နှင့် မှတ်မိစေမယ့် ဂိမ်းများ။",
+  "startDay1": "Day 1 စတင်မည်",
+  "startDataScience": "Data Science သင်ခန်းစာများ",
+  "playGames": "ဂိမ်းကစားမည်",
+  "lessonsTitle": "သင်ခန်းစာများ",
+  "gamesTitle": "ဂိမ်းများ",
+  "day": "Day {n}",
+  "progress": "{n}% လေ့လာပြီး",
+  "pill": "PYTHON · အသေးစိတ် လေ့လာခြင်း"
+}

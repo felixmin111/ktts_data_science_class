@@ -4,9 +4,12 @@ Interactive Python lecture site — lessons, a live in-browser Python playground
 Same stack as NGCP `employee-frontend`: Vue 3 + TypeScript + Vite, Ant Design Vue, Pinia, Vue Router,
 vue-i18n, VueUse, unplugin auto-import / components / icons, SCSS, ESLint + oxlint + Prettier, Vitest.
 
+Every page needs an account. Accounts, lesson progress and game history are stored by the
+Spring Boot API in `../python-lecture-backend` — start it first (see its README).
+
 ```sh
 npm install
-npm run dev         # http://localhost:3100
+npm run dev         # http://localhost:3100 (proxies /api to http://localhost:8090)
 npm run test:unit
 npm run build
 ```

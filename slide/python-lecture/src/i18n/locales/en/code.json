@@ -1,0 +1,15 @@
+{
+  "run": "Run",
+  "running": "Running…",
+  "reset": "Reset",
+  "copy": "Copy",
+  "copied": "Copied",
+  "input": "Input (one line per input() call)",
+  "output": "Output",
+  "expected": "Expected output",
+  "loadingPython": "Loading Python in your browser (first time only)…",
+  "loadingPackages": "Downloading {names} (first time only, can take ~20 s)…",
+  "pythonFailed": "Could not load Python. Check your internet connection and try again.",
+  "noOutput": "(no output)",
+  "ariaLabel": "Python code"
+}

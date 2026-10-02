@@ -1,0 +1,11 @@
+{
+  "title": "Class dashboard",
+  "lead": "{n} students. Select a student to see their lessons and game history.",
+  "search": "Search by name or email",
+  "student": "Student",
+  "lastActive": "Last active",
+  "noStudents": "No students yet.",
+  "allStudents": "All students",
+  "studentNotFound": "Student not found.",
+  "joined": "joined {date}"
+}

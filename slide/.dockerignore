@@ -1,0 +1,12 @@
+**/node_modules
+**/dist
+**/target
+**/.git
+**/.idea
+**/.DS_Store
+**/.env.local
+**/.env.*.local
+**/*.log
+**/.aws
+**/.codex
+**/.agents

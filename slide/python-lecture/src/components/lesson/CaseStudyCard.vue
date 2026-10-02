@@ -2,13 +2,9 @@
 import type { CaseStudyBlock } from '@/models/lesson.model'
 
 defineProps<{ study: CaseStudyBlock }>()
+const { t } = useI18n()
 
-const rows = [
-  { key: 'problem', label: 'Problem' },
-  { key: 'data', label: 'Data' },
-  { key: 'method', label: 'Method' },
-  { key: 'outcome', label: 'Outcome' }
-] as const
+const rows = ['problem', 'data', 'method', 'outcome'] as const
 </script>
 
 <template>
@@ -16,14 +12,14 @@ const rows = [
     <header class="case__head">
       <IconMdiEarth class="case__icon" />
       <div>
-        <p class="case__label">Real-world case · {{ study.domain }}</p>
+        <p class="case__label">{{ t('lesson.case.label', { domain: study.domain }) }}</p>
         <h3 class="case__title">{{ study.title }}</h3>
       </div>
     </header>
     <dl class="case__grid">
-      <div v-for="row in rows" :key="row.key" class="case__cell">
-        <dt>{{ row.label }}</dt>
-        <dd>{{ study[row.key] }}</dd>
+      <div v-for="row in rows" :key="row" class="case__cell">
+        <dt>{{ t(`lesson.case.${row}`) }}</dt>
+        <dd>{{ study[row] }}</dd>
       </div>
     </dl>
   </article>

@@ -27,14 +27,12 @@ export function scoreAnswer(correct: boolean, secondsLeft: number, streak: numbe
   return BASE_POINTS + speed + streakBonus
 }
 
-export function rankFor(accuracy: number): { title: string; message: string } {
-  if (accuracy >= 0.9)
-    return { title: 'Pythonista', message: 'Outstanding — you think like the interpreter.' }
-  if (accuracy >= 0.7)
-    return { title: 'Code Detective', message: 'Great instincts. Review the misses below.' }
-  if (accuracy >= 0.5) return { title: 'Apprentice', message: 'Good start — replay to lock it in.' }
-  return {
-    title: 'Explorer',
-    message: 'Every expert started here. Read the explanations and try again.'
-  }
+export type RankKey = 'pythonista' | 'detective' | 'apprentice' | 'explorer'
+
+/** Rank for a round's accuracy; its title and message live under `game.rank.<key>` in the locales. */
+export function rankFor(accuracy: number): RankKey {
+  if (accuracy >= 0.9) return 'pythonista'
+  if (accuracy >= 0.7) return 'detective'
+  if (accuracy >= 0.5) return 'apprentice'
+  return 'explorer'
 }

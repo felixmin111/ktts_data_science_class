@@ -16,6 +16,7 @@ export function useGameEngine(game: MaybeRefOrGetter<GameDefinition>) {
   const answers = ref<AnswerRecord[]>([])
   const secondsLeft = ref(0)
   const isNewBest = ref(false)
+  const saveFailed = ref(false)
 
   const definition = computed(() => toValue(game))
   const current = computed(() => questions.value[index.value])
@@ -48,6 +49,7 @@ export function useGameEngine(game: MaybeRefOrGetter<GameDefinition>) {
     bestStreak.value = 0
     answers.value = []
     isNewBest.value = false
+    saveFailed.value = false
     startQuestion()
   }
 
@@ -66,12 +68,17 @@ export function useGameEngine(game: MaybeRefOrGetter<GameDefinition>) {
   function next() {
     if (index.value + 1 >= questions.value.length) {
       phase.value = 'finished'
-      isNewBest.value = scoreStore.record(definition.value.id, {
-        score: score.value,
-        correct: correctCount.value,
-        total: questions.value.length,
-        playedAt: new Date().toISOString()
-      })
+      isNewBest.value = false
+      scoreStore
+        .record({
+          gameId: definition.value.id,
+          score: score.value,
+          correct: correctCount.value,
+          total: questions.value.length,
+          bestStreak: bestStreak.value
+        })
+        .then((newBest) => (isNewBest.value = newBest))
+        .catch(() => (saveFailed.value = true))
       return
     }
     index.value += 1
@@ -99,6 +106,7 @@ export function useGameEngine(game: MaybeRefOrGetter<GameDefinition>) {
     secondsLeft,
     timePercent,
     isNewBest,
+    saveFailed,
     start,
     answer,
     next,

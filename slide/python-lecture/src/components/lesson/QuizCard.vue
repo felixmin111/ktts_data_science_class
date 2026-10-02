@@ -16,7 +16,7 @@ function retry() {
 
 <template>
   <div class="quiz">
-    <p class="quiz__label"><IconMdiHelpCircleOutline /> Quick check</p>
+    <p class="quiz__label"><IconMdiHelpCircleOutline /> {{ t('common.quickCheck') }}</p>
     <p class="quiz__question">{{ quiz.question }}</p>
     <CodeRunner v-if="quiz.code" :code="quiz.code" />
 

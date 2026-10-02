@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { gamesInTrack } from '@/data/games'
-import { tracks } from '@/data/lessons'
+import { getTracks } from '@/data/lessons'
 </script>
 
 <template>
   <div class="games-by-track">
-    <section v-for="track in tracks" :key="track.id" class="games-by-track__group">
+    <section v-for="track in getTracks()" :key="track.id" class="games-by-track__group">
       <h3>{{ track.title }}</h3>
       <div class="games-by-track__grid">
         <GameCard v-for="game in gamesInTrack(track.id)" :key="game.id" :game="game" />

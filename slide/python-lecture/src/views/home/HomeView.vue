@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { lessonLabel, lessonsInTrack, tracks } from '@/data/lessons'
+import { getTracks, lessonLabel, lessonsInTrack } from '@/data/lessons'
 import Routes from '@/router/uri.route'
 
 const { t } = useI18n()
@@ -11,7 +11,7 @@ const progress = useProgressStore()
     <section class="hero">
       <div class="container hero__inner">
         <div class="hero__text">
-          <p class="hero__pill">PYTHON · DEEP DIVE</p>
+          <p class="hero__pill">{{ t('home.pill') }}</p>
           <h1>{{ t('home.heroTitle') }}</h1>
           <p class="hero__body">{{ t('home.heroBody') }}</p>
           <div class="hero__actions">
@@ -40,7 +40,7 @@ Riverside     7795</pre>
       </div>
     </section>
 
-    <section v-for="track in tracks" :key="track.id" class="container block">
+    <section v-for="track in getTracks()" :key="track.id" class="container block">
       <h2>{{ track.title }}</h2>
       <p class="block__lead">{{ track.description }}</p>
       <div class="grid">

@@ -1,0 +1,16 @@
+{
+  "contents": "Contents",
+  "teacherNotes": "Teacher notes",
+  "finished": "You reached the end of this lesson!",
+  "playGame": "Play a game",
+  "resetProgress": "Reset progress",
+  "notFound": "This lesson does not exist.",
+  "analogy": "Real-world analogy · {title}",
+  "case": {
+    "label": "Real-world case · {domain}",
+    "problem": "Problem",
+    "data": "Data",
+    "method": "Method",
+    "outcome": "Outcome"
+  }
+}

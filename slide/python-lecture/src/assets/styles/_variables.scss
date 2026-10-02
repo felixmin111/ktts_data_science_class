@@ -1,6 +1,7 @@
 // Design tokens (shared with the Day 1 slide deck)
-$font-display: 'Space Grotesk', Arial, sans-serif;
-$font-sans: 'IBM Plex Sans', Arial, sans-serif;
+$font-myanmar: 'Noto Sans Myanmar', 'Myanmar Sangam MN', 'Myanmar Text', 'Padauk';
+$font-display: 'Space Grotesk', $font-myanmar, Arial, sans-serif;
+$font-sans: 'IBM Plex Sans', $font-myanmar, Arial, sans-serif;
 $font-mono: 'JetBrains Mono', 'Courier New', monospace;
 
 $color-paper: #f6f3ec;

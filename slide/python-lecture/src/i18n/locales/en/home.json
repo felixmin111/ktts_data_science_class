@@ -1,0 +1,12 @@
+{
+  "heroTitle": "Talk to computers in Python",
+  "heroBody": "From your first print() to pandas and charts. Real-world analogies, real Python running in your browser, and games that make it stick.",
+  "startDay1": "Start Day 1",
+  "startDataScience": "Data Science track",
+  "playGames": "Play the games",
+  "lessonsTitle": "Lessons",
+  "gamesTitle": "Games",
+  "day": "Day {n}",
+  "progress": "{n}% explored",
+  "pill": "PYTHON · DEEP DIVE"
+}

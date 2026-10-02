@@ -2,7 +2,9 @@ export const MenuKeys = {
   HOME: 'home',
   LESSON: 'lesson',
   GAMES: 'games',
-  PLAYGROUND: 'playground'
+  PLAYGROUND: 'playground',
+  HISTORY: 'history',
+  TEACHER: 'teacher'
 } as const
 
 const Routes = {
@@ -25,6 +27,26 @@ const Routes = {
     name: 'playground',
     title: 'nav.playground',
     menuKey: MenuKeys.PLAYGROUND
+  },
+  LOGIN: { path: '/login', name: 'login', title: 'auth.login.title' },
+  REGISTER: { path: '/register', name: 'register', title: 'auth.register.title' },
+  HISTORY: {
+    path: '/history',
+    name: 'history',
+    title: 'history.title',
+    menuKey: MenuKeys.HISTORY
+  },
+  TEACHER: {
+    path: '/teacher',
+    name: 'teacher',
+    title: 'teacher.title',
+    menuKey: MenuKeys.TEACHER
+  },
+  TEACHER_STUDENT: {
+    path: '/teacher/students/:studentId',
+    name: 'teacher-student',
+    title: 'teacher.title',
+    menuKey: MenuKeys.TEACHER
   },
   NOT_FOUND: { path: '/:pathMatch(.*)*', name: 'not-found', title: 'notFound.title' }
 } as const

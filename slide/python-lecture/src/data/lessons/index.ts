@@ -1,4 +1,6 @@
 import type { Lesson, Track, TrackId } from '@/models/lesson.model'
+import { localize } from '@/functions/localize.function'
+import { activeContentTranslation } from '@/i18n/content'
 import day1 from './day1.lesson'
 import dsDay1 from './dataScience/day01WhatIsDataScience.lesson'
 import dsDay2 from './dataScience/day02DataStatistics.lesson'
@@ -58,15 +60,37 @@ export const lessons: Lesson[] = [
   dsDay10
 ]
 
+const localizedCache = new WeakMap<object, { tracks: Track[]; lessons: Lesson[] }>()
+
+/** Tracks and lessons in the active locale (falls back to English for anything untranslated). */
+function localized(): { tracks: Track[]; lessons: Lesson[] } {
+  const translation = activeContentTranslation()
+  if (!translation) return { tracks, lessons }
+
+  let cached = localizedCache.get(translation)
+  if (!cached) {
+    cached = {
+      tracks: tracks.map((track) => localize(track, translation.tracks[track.id])),
+      lessons: lessons.map((lesson) => localize(lesson, translation.lessons[lesson.id]))
+    }
+    localizedCache.set(translation, cached)
+  }
+  return cached
+}
+
+export function getTracks(): Track[] {
+  return localized().tracks
+}
+
 export function findLesson(id: string): Lesson | undefined {
-  return lessons.find((lesson) => lesson.id === id)
+  return localized().lessons.find((lesson) => lesson.id === id)
 }
 
 export function lessonsInTrack(trackId: TrackId): Lesson[] {
-  return lessons.filter((lesson) => lesson.track === trackId)
+  return localized().lessons.filter((lesson) => lesson.track === trackId)
 }
 
 export function lessonLabel(lesson: Lesson): string {
-  const prefix = tracks.find((track) => track.id === lesson.track)?.labelPrefix ?? 'Lesson'
+  const prefix = getTracks().find((track) => track.id === lesson.track)?.labelPrefix ?? 'Lesson'
   return `${prefix} ${lesson.day}`
 }

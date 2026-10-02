@@ -20,7 +20,8 @@ const {
   correctCount,
   secondsLeft,
   timePercent,
-  isNewBest
+  isNewBest,
+  saveFailed
 } = engine
 
 const best = computed(() => useScoreStore().bestFor(props.game.id))
@@ -128,9 +129,10 @@ function optionState(optionIndex: number) {
     <!-- Results -->
     <section v-else-if="phase === 'finished'" class="game__panel game__results">
       <p class="game__eyebrow">{{ t('game.finishedTitle') }}</p>
-      <h1>{{ rank.title }}</h1>
-      <p class="game__lead">{{ rank.message }}</p>
+      <h1>{{ t(`game.rank.${rank}.title`) }}</h1>
+      <p class="game__lead">{{ t(`game.rank.${rank}.message`) }}</p>
       <div class="game__score">{{ score }}</div>
+      <a-alert v-if="saveFailed" type="warning" show-icon :message="t('game.saveFailed')" />
       <a-tag v-if="isNewBest" color="gold" class="game__new-best">
         <IconMdiTrophy /> {{ t('game.newBest') }}
       </a-tag>

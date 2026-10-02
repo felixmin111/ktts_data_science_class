@@ -5,6 +5,14 @@ const { t } = useI18n()
 const route = useRoute()
 const progress = useProgressStore()
 const { teacherMode } = storeToRefs(progress)
+const auth = useAuthStore()
+const { user, isTeacher } = storeToRefs(auth)
+const router = useRouter()
+
+function onAccountMenu({ key }: { key: string | number }) {
+  if (key === 'logout') auth.logout()
+  else router.push({ name: String(key) })
+}
 
 const activeKey = computed(() => {
   if (route.meta.menuKey !== Routes.LESSON.menuKey) return route.meta.menuKey
@@ -52,10 +60,33 @@ const links = computed(() => [
         </RouterLink>
       </nav>
 
-      <label class="nav__teacher">
+      <LanguageSwitcher />
+
+      <label v-if="isTeacher" class="nav__teacher">
         <a-switch v-model:checked="teacherMode" size="small" />
         <span>{{ t('common.teacherMode') }}</span>
       </label>
+
+      <a-dropdown v-if="user" :trigger="['click']" placement="bottomRight">
+        <button type="button" class="nav__account" :aria-label="t('nav.account')">
+          <span class="nav__avatar">{{ user.displayName.charAt(0).toUpperCase() }}</span>
+          <span class="nav__account-name">{{ user.displayName }}</span>
+        </button>
+        <template #overlay>
+          <a-menu @click="onAccountMenu">
+            <a-menu-item disabled class="nav__account-email">{{ user.email }}</a-menu-item>
+            <a-menu-divider />
+            <a-menu-item :key="Routes.HISTORY.name">
+              <IconMdiHistory /> {{ t('nav.history') }}
+            </a-menu-item>
+            <a-menu-item v-if="isTeacher" :key="Routes.TEACHER.name">
+              <IconMdiAccountGroup /> {{ t('nav.teacher') }}
+            </a-menu-item>
+            <a-menu-divider />
+            <a-menu-item key="logout"><IconMdiLogout /> {{ t('nav.logout') }}</a-menu-item>
+          </a-menu>
+        </template>
+      </a-dropdown>
     </div>
   </header>
 </template>
@@ -137,7 +168,45 @@ const links = computed(() => [
     cursor: pointer;
   }
 
+  &__account {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 10px 4px 4px;
+    border: 1px solid $color-line;
+    border-radius: 999px;
+    background: $color-card;
+    color: $color-ink;
+    font: inherit;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $color-blue;
+    }
+  }
+
+  &__avatar {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: $color-blue;
+    color: $color-paper;
+    font-weight: 700;
+    font-size: 13px;
+  }
+
+  &__account-name {
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+  }
+
   @include mobile {
+    &__account-name,
     &__name,
     &__teacher span {
       display: none;

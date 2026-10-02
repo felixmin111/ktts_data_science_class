@@ -16,4 +16,6 @@ app.use(router)
 app.use(Antd)
 app.use(i18n)
 
+useLocaleStore().initialize()
+
 router.isReady().then(() => app.mount('#app'))
