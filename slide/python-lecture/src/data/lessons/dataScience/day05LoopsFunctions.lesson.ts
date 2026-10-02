@@ -357,6 +357,7 @@ print(summarize(orders))
           type: 'code',
           runnable: true,
           title: 'One possible solution',
+          hidden: true,
           code: py`
 orders = [
     {"item": "Latte",  "quantity": 2, "unit_price": 75},

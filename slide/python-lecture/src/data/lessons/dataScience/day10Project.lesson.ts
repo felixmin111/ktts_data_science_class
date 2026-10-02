@@ -117,6 +117,7 @@ df["revenue"] = df["quantity"] * df["unit_price"]
           type: 'code',
           runnable: true,
           title: 'Solution',
+          hidden: true,
           code: py`
 import pandas as pd
 import matplotlib.pyplot as plt

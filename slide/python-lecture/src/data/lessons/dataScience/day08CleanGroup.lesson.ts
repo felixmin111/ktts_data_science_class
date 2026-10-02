@@ -349,6 +349,7 @@ df = pd.read_csv("cafe_sales.csv")
           type: 'code',
           runnable: true,
           title: 'One possible solution',
+          hidden: true,
           code: py`
 import pandas as pd
 

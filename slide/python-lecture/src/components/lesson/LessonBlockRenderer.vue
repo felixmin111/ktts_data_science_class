@@ -12,6 +12,15 @@ defineProps<{ block: LessonBlock }>()
     <!-- eslint-enable vue/no-v-html -->
   </div>
   <MemoryGame v-else-if="block.type === 'memory'" />
+  <SolutionReveal v-else-if="block.type === 'code' && block.hidden" :title="block.title">
+    <CodeRunner
+      :code="block.code"
+      :title="block.title"
+      :expected-output="block.output"
+      :stdin="block.stdin"
+      :runnable="block.runnable"
+    />
+  </SolutionReveal>
   <CodeRunner
     v-else-if="block.type === 'code'"
     :code="block.code"

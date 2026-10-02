@@ -12,5 +12,10 @@
     "data": "Data",
     "method": "Method",
     "outcome": "Outcome"
+  },
+  "solution": {
+    "hint": "Try the exercise yourself first, then check your answer.",
+    "show": "Show solution",
+    "hide": "Hide solution"
   }
 }

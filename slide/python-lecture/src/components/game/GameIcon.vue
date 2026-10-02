@@ -13,5 +13,7 @@ defineProps<{ icon: GameDefinition['icon'] }>()
   <IconMdiLinkVariant v-else-if="icon === 'link-variant'" />
   <IconMdiBroom v-else-if="icon === 'broom'" />
   <IconMdiBriefcaseSearchOutline v-else-if="icon === 'briefcase-search-outline'" />
+  <IconMdiCalculatorVariant v-else-if="icon === 'calculator'" />
+  <IconMdiScaleBalance v-else-if="icon === 'scale-balance'" />
   <IconMdiChartBar v-else />
 </template>

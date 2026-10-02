@@ -14,6 +14,8 @@ export interface CodeBlock {
   /** Show the "Run" button (executes with Pyodide). */
   runnable?: boolean
   title?: string
+  /** Cover the block until the learner clicks “Show solution”. */
+  hidden?: boolean
 }
 
 export interface AnalogyBlock {

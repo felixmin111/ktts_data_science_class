@@ -267,7 +267,53 @@ const day1: LessonTranslation = {
           title: 'ဆွဲကြိုး',
           body: 'ပုတီးစေ့ 0 ကို ကြည့်လို့ရတယ်၊ ပုတီးစေ့တွေ ရေလို့ရတယ်၊ အပိုင်းတစ်ပိုင်း ကူးလို့ရတယ် — ဒါပေမဲ့ ပုတီးစေ့ကို လဲလို့ မရဘူး။ String တွေက immutable: အသစ်တစ်ခု တည်ဆောက်ပါ၊ ဥပမာ "J" + s[1:]။'
         },
-        { type: 'code', title: 'Character တစ်လုံးကို ပြောင်းကြည့်ပါ' }
+        {
+          type: 'text',
+          body: [
+            '**Immutable** ဆိုတာ “တည်ဆောက်ပြီးရင် ပြောင်းလို့မရ” လို့ ဆိုလိုတယ်။ Character တစ်လုံးကို ဖတ်တာ (`s[0]`) ရတယ်၊ ဒါပေမဲ့ အစားထိုးဖို့ (`s[0] = "J"`) ကြိုးစားရင် **TypeError** တက်တယ်။',
+            '"Jython" ရချင်ရင် string **အသစ်** တစ်ခု တည်ဆောက်ရတယ်: `"J"` + `s[1:]` (index 1 ကနေ အဆုံးထိ၊ "ython") → "Jython"။ ပြီးမှ `s = ...` နဲ့ s ကပ်ပြားကို string အသစ်ပေါ် ရွှေ့ကပ်တယ်။ မူလ "Python" ကို လုံးဝ မထိဘူး။',
+            'String method တွေလည်း ဒီအတိုင်းပဲ: `s.upper()`၊ `s.replace("P", "J")` တို့က string အသစ်ကို **return** ပြန်ပေးတယ်။ ရလဒ်ကို မသိမ်းထားရင် ဘာမှ မပြောင်းဘူး။'
+          ]
+        },
+        { type: 'code', title: 'Character တစ်လုံးကို ပြောင်းကြည့်ပါ' },
+        { type: 'code', title: 'အစား string အသစ် တည်ဆောက်ပါ' },
+        {
+          type: 'callout',
+          title: 'အဖြစ်များတဲ့ အမှား',
+          body: '`name.upper()` ကို သီးသန့်တစ်ကြောင်း ရေးပြီး name ပြောင်းသွားမယ်လို့ ထင်တာ။ Method တွေက string ကို နေရာမှာတင် ဘယ်တော့မှ မပြင်ဘူး — ရလဒ်ကို အမြဲ ပြန်သိမ်းပါ: `name = name.upper()`။'
+        },
+        {
+          type: 'code',
+          title: 'လေ့ကျင့်ခန်း: print() တစ်ခုချင်းစီကို ဖြည့်ပါ (comment ထဲက မေးခွန်းကို ဖြေပါ)'
+        },
+        { type: 'code', title: 'ဖြေနည်း တစ်ခု' },
+        {
+          type: 'quiz',
+          question: 'ဒါက ဘာကို print ထုတ်မလဲ?',
+          explanation: 'အနုတ် index တွေက နောက်ဆုံးကနေ ရေတယ်: s[-1] က "n"၊ ဒါကြောင့် s[-2] က "o"။'
+        },
+        {
+          type: 'quiz',
+          question: 'ဒါက ဘာကို print ထုတ်မလဲ?',
+          explanation: 'stop မပါရင် “အဆုံးထိ” လို့ ဆိုလိုတယ်။ Index 2 က "t" မို့ "thon" ရတယ်။'
+        },
+        {
+          type: 'quiz',
+          question: 'ဒါက ဘာကို print ထုတ်မလဲ?',
+          explanation: 's[:2] က "Py" (start မပါရင် “အစကနေ”)၊ s[-1] က "n": "Py" + "n" = "Pyn"။'
+        },
+        {
+          type: 'quiz',
+          question: 'ဒါက ဘာကို print ထုတ်မလဲ?',
+          explanation:
+            'upper() က string အသစ်ကို return ပြန်ပေမဲ့ ဘယ်သူမှ မသိမ်းထားဘူး။ name က "cat" ကိုပဲ ညွှန်နေတုန်း။ name = name.upper() လို့ ရေးပါ။'
+        },
+        {
+          type: 'quiz',
+          question: 'ဘာဖြစ်မလဲ?',
+          options: ['IndexError', 'ဘာမှ print မထွက်ဘူး', 'n', '""'],
+          explanation: '"Python" မှာ index 0 ကနေ 5 ထိပဲ ရှိတယ်။ Index 10 ကို တောင်းရင် အပြင်ရောက်သွားတယ်: IndexError။'
+        }
       ]
     },
     {

@@ -26,6 +26,8 @@ export interface GameDefinition {
     | 'link-variant'
     | 'broom'
     | 'briefcase-search-outline'
+    | 'calculator'
+    | 'scale-balance'
   color: string
   /** Lesson the game practises (its order inside the track). */
   day: number

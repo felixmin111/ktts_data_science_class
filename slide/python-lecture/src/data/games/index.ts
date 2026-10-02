@@ -8,14 +8,18 @@ import chartPicker from './chartPicker.game'
 import correlationCausation from './correlationCausation.game'
 import dataDetective from './dataDetective.game'
 import pandasPredict from './pandasPredict.game'
+import operatorChallenge from './operatorChallenge.game'
 import predictOutput from './predictOutput.game'
 import statsIntuition from './statsIntuition.game'
+import trueOrFalse from './trueOrFalse.game'
 import typeDetective from './typeDetective.game'
 
 export const games: GameDefinition[] = [
   typeDetective,
   predictOutput,
   bugHunter,
+  operatorChallenge,
+  trueOrFalse,
   caseMatch,
   statsIntuition,
   correlationCausation,

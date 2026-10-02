@@ -319,7 +319,7 @@ const day1: Lesson = {
       id: 'strings',
       eyebrow: 'Data types · str',
       title: 'Strings: a sequence of characters',
-      minutes: 3,
+      minutes: 10,
       blocks: [
         {
           type: 'code',
@@ -332,10 +332,85 @@ const day1: Lesson = {
           body: 'You can look at bead 0, count the beads or copy a section — but you can’t swap a bead. Strings are immutable: build a new one instead, e.g. "J" + s[1:].'
         },
         {
+          type: 'text',
+          body: [
+            '**Immutable** means “cannot be changed after it is made”. Reading a character (`s[0]`) is fine; assigning to one (`s[0] = "J"`) raises a **TypeError**.',
+            'To get "Jython" you build a **new** string: `"J"` + `s[1:]` (everything from index 1 onward, "ython") → "Jython". Then `s = ...` moves the name s onto the new string. The old "Python" is never touched.',
+            'The same is true of string methods: `s.upper()` and `s.replace("P", "J")` **return** a new string. If you don’t store the result, nothing changes.'
+          ]
+        },
+        {
           type: 'code',
           runnable: true,
           title: 'Try to change a character',
           code: 's = "Python"\ns[0] = "J"'
+        },
+        {
+          type: 'code',
+          runnable: true,
+          title: 'Build a new string instead',
+          code: 's = "Python"\nt = "J" + s[1:]\nprint(t)              # Jython\nprint(s)              # Python  (unchanged)\n\ns.upper()             # result thrown away\nprint(s)              # Python\ns = s.upper()         # keep it: point s at the new string\nprint(s)              # PYTHON'
+        },
+        {
+          type: 'callout',
+          tone: 'warning',
+          title: 'Common mistake',
+          body: 'Writing `name.upper()` on its own line and expecting name to change. Methods never edit a string in place — always assign the result: `name = name.upper()`.'
+        },
+        {
+          type: 'code',
+          runnable: true,
+          title: 'Exercise: fill in each print()',
+          code: 'word = "Myanmar"\ncity = "Yangon"\n\n# 1. The first letter of word\nprint()\n\n# 2. The last letter of word (use a negative index)\nprint()\n\n# 3. "Myan" (use a slice of word)\nprint()\n\n# 4. How many letters does city have? (use len)\nprint()\n\n# 5. city in capital letters\nprint()\n\n# 6. "Mangon": change the first letter of city\n#    (strings are immutable, so build a new one)\nprint()'
+        },
+        {
+          type: 'code',
+          runnable: true,
+          title: 'One possible solution',
+          hidden: true,
+          code: 'word = "Myanmar"\ncity = "Yangon"\n\nprint(word[0])          # 1\nprint(word[-1])         # 2\nprint(word[0:4])        # 3: stop 4 is excluded\nprint(len(city))        # 4\nprint(city.upper())     # 5\nprint("M" + city[1:])   # 6',
+          output: 'M\nr\nMyan\n6\nYANGON\nMangon'
+        },
+        {
+          type: 'quiz',
+          question: 'What does this print?',
+          code: 's = "Python"\nprint(s[-2])',
+          options: ['o', 'n', 'h', 'y'],
+          answer: 0,
+          explanation: 'Negative indexes count from the end: s[-1] is "n", so s[-2] is "o".'
+        },
+        {
+          type: 'quiz',
+          question: 'What does this print?',
+          code: 's = "Python"\nprint(s[2:])',
+          options: ['Py', 'thon', 'ython', 'hon'],
+          answer: 1,
+          explanation: 'No stop means “to the end”. Index 2 is "t", so you get "thon".'
+        },
+        {
+          type: 'quiz',
+          question: 'What does this print?',
+          code: 's = "Python"\nprint(s[:2] + s[-1])',
+          options: ['Pyn', 'Pyt', 'Pn', 'Pyo'],
+          answer: 0,
+          explanation: 's[:2] is "Py" (no start means “from the beginning”) and s[-1] is "n": "Py" + "n" = "Pyn".'
+        },
+        {
+          type: 'quiz',
+          question: 'What does this print?',
+          code: 'name = "cat"\nname.upper()\nprint(name)',
+          options: ['CAT', 'cat', 'Cat', 'Error'],
+          answer: 1,
+          explanation:
+            'upper() returns a new string, but nobody stored it. name still points at "cat". Write name = name.upper().'
+        },
+        {
+          type: 'quiz',
+          question: 'What happens?',
+          code: 's = "Python"\nprint(s[10])',
+          options: ['IndexError', 'Nothing is printed', 'n', '""'],
+          answer: 0,
+          explanation: '"Python" has indexes 0 to 5 only. Asking for index 10 is out of range: IndexError.'
         }
       ]
     },
@@ -501,6 +576,7 @@ const day1: Lesson = {
           type: 'code',
           runnable: true,
           title: 'One possible solution',
+          hidden: true,
           code: 'name = input("What is your name? ")\ncountry = input("Where are you from? ")\nfood = input("What is your favorite food? ")\nage = int(input("How old are you? "))\n\nprint("Hello!")\nprint("My name is", name)\nprint("I am from", country)\nprint(f"My favorite food is {food}")\nprint(f"Born around {2026 - age}")',
           stdin: ['Neo', 'Myanmar', 'Pizza', '25']
         }

@@ -14,6 +14,8 @@ import dsDay10 from './lessons/dataScience/day10Project.lesson'
 import typeDetective from './games/typeDetective.game'
 import predictOutput from './games/predictOutput.game'
 import bugHunter from './games/bugHunter.game'
+import operatorChallenge from './games/operatorChallenge.game'
+import trueOrFalse from './games/trueOrFalse.game'
 import caseMatch from './games/caseMatch.game'
 import statsIntuition from './games/statsIntuition.game'
 import correlationCausation from './games/correlationCausation.game'
@@ -54,6 +56,8 @@ const myanmar: ContentTranslation = {
     'type-detective': typeDetective,
     'predict-output': predictOutput,
     'bug-hunter': bugHunter,
+    'operator-challenge': operatorChallenge,
+    'true-or-false': trueOrFalse,
     'case-match': caseMatch,
     'stats-intuition': statsIntuition,
     'correlation-causation': correlationCausation,
