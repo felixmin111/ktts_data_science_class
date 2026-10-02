@@ -174,7 +174,7 @@ const day1: Lesson = {
         {
           type: 'text',
           body: [
-            '`name = "Neo"` means: first create the object `"Neo"`, then **attach** the name `name` to it. Read assignments right to left. `=` is not “equals” — that is `==`.'
+            '`name = "Neo"` means: first evaluate the right side to get the object `"Neo"`, then **attach** the name `name` to it. Read assignments right to left. `=` is not “equals” — that is `==`.'
           ]
         },
         {
@@ -202,6 +202,33 @@ const day1: Lesson = {
       minutes: 6,
       blocks: [
         {
+          type: 'text',
+          body: [
+            'Python variables are **names that refer to objects**. Multiple names can refer to the same object. Assignment (`b = a`) binds a name; it does not copy the object.',
+            '**Mutable** objects can change after creation. Common examples are `list`, `dict`, and `set`. When two names refer to the same mutable object, a change through either name is visible through both.',
+            '**Immutable** objects cannot change after creation. Common examples are `int`, `float`, `str`, `bool`, and `tuple`. Assigning a different value rebinds the name to a different object, which Python may create or reuse.'
+          ]
+        },
+        {
+          type: 'code',
+          title: 'Mutation: change the shared list',
+          runnable: true,
+          code: 'a = [1, 2]\nb = a\na.append(3)\nprint(a)  # [1, 2, 3]\nprint(b)  # [1, 2, 3]\nprint(a is b)  # True: still the same list'
+        },
+        {
+          type: 'code',
+          title: 'Rebinding: move one name to another string',
+          runnable: true,
+          code: 'a = "Felix"\nb = a\na = "Neo"\nprint(a)  # Neo\nprint(b)  # Felix\nprint(a is b)  # False: different objects'
+        },
+        {
+          type: 'callout',
+          tone: 'info',
+          title: 'The operation matters',
+          body: 'a.append(3) mutates a list; a = [3] rebinds a even though lists are mutable. A tuple cannot replace its elements, but a mutable object inside it (such as a list) can still change.'
+        },
+        { type: 'memory' },
+        {
           type: 'code',
           runnable: true,
           code: 'a = 25\nb = a\nprint(a is b)   # same object?\n\na = 30          # move tag a to a new object\nprint(a, b)\nprint(a is b)'
@@ -214,7 +241,7 @@ const day1: Lesson = {
         {
           type: 'text',
           body: [
-            '`x = x + 1` is not algebra: ① evaluate the right side (look up x → 5) ② compute a **new** int object 6 ③ move the tag x onto it. Ints are immutable — the 5 object is never changed.'
+            '`x = x + 1` is not algebra: ① evaluate the right side (look up x → 5) ② compute the result, an int object 6 ③ move the tag x onto it. Ints are immutable — the 5 object is never changed.'
           ]
         },
         {
@@ -229,7 +256,7 @@ const day1: Lesson = {
           options: ['10', '15', '5', 'Error'],
           answer: 0,
           explanation:
-            'b still points at the 10 object. a + 5 created a new object 15 and only the tag a moved.'
+            'b still points at the 10 object. a + 5 produced the int object 15 and only the tag a moved.'
         }
       ]
     },

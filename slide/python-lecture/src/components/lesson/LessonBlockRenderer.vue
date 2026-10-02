@@ -11,6 +11,7 @@ defineProps<{ block: LessonBlock }>()
     <p v-for="(paragraph, index) in block.body" :key="index" v-html="renderInline(paragraph)" />
     <!-- eslint-enable vue/no-v-html -->
   </div>
+  <MemoryGame v-else-if="block.type === 'memory'" />
   <CodeRunner
     v-else-if="block.type === 'code'"
     :code="block.code"

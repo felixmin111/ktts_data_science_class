@@ -7,5 +7,21 @@
   "noStudents": "No students yet.",
   "allStudents": "All students",
   "studentNotFound": "Student not found.",
-  "joined": "joined {date}"
+  "joined": "joined {date}",
+  "completedLessons": "Completed lessons",
+  "status": "Status",
+  "completed": "Completed",
+  "inProgress": "In progress",
+  "notStarted": "Not started",
+  "opened": "Opened",
+  "notOpened": "Not opened",
+  "completionNote": "A lesson is completed when every section has been opened. This does not verify mastery.",
+  "recentGamesNote": "Showing the latest 200 rounds. Best scores are based on these rounds.",
+  "gameScores": "Best game scores (latest 200 rounds)",
+  "refresh": "Refresh",
+  "students": "Students",
+  "viewProgress": "View lessons and scores",
+  "partialFailure": "Some student details could not load. Refresh to try again.",
+  "unavailable": "Unavailable",
+  "loading": "Loading…"
 }

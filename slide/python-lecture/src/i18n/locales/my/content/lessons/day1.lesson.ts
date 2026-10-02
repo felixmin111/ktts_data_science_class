@@ -171,6 +171,22 @@ const day1: LessonTranslation = {
       eyebrow: 'Variable များ',
       title: 'နာမည် နှစ်ခု၊ object တစ်ခု — နှင့် rebinding',
       blocks: [
+        {
+          type: 'text',
+          body: [
+            'Python variable တွေက **object ကို ညွှန်တဲ့ နာမည်တွေ** ဖြစ်တယ်။ နာမည်များစွာက object တစ်ခုတည်းကို ညွှန်နိုင်တယ်။ `b = a` က object ကို copy မလုပ်ဘဲ နာမည်ကို ချိတ်ပေးတာပါ။',
+            '**Mutable** object တွေကို ဖန်တီးပြီးနောက် ပြောင်းလဲနိုင်တယ်။ `list`, `dict`, `set` တို့ ပါဝင်တယ်။ နာမည်နှစ်ခုက object တစ်ခုတည်းကို ညွှန်နေရင် တစ်ခုကနေ ပြောင်းတာကို နှစ်ခုလုံးက မြင်ရတယ်။',
+            '**Immutable** object တွေကို ဖန်တီးပြီးနောက် ပြောင်းလဲမရဘူး။ `int`, `float`, `str`, `bool`, `tuple` တို့ ပါဝင်တယ်။ Value အသစ် assign လုပ်ရင် နာမည်ကို တခြား object ဆီ ပြန်ချိတ်ပေးတယ်။ အဲဒီ object ကို Python က ဖန်တီးနိုင်သလို ရှိပြီးသားကို သုံးနိုင်တယ်။'
+          ]
+        },
+        { type: 'code', title: 'Mutation: အတူသုံးတဲ့ list ကို ပြောင်းခြင်း' },
+        { type: 'code', title: 'Rebinding: နာမည်တစ်ခုကို string တခြားတစ်ခုဆီ ရွှေ့ခြင်း' },
+        {
+          type: 'callout',
+          title: 'ဘာ operation လုပ်လဲ ဆိုတာ အရေးကြီးတယ်',
+          body: 'a.append(3) က list ကို ပြောင်းတယ်။ a = [3] က a နာမည်ကို ပြန်ချိတ်တယ်။ Tuple ရဲ့ element တွေကို အစားထိုးမရပေမယ့် အထဲက mutable object (ဥပမာ list) ကို ပြောင်းနိုင်တယ်။'
+        },
+        { type: 'memory' },
         { type: 'code' },
         {
           type: 'analogy',

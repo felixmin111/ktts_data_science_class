@@ -1,5 +1,6 @@
 import type { ContentTranslation } from '@/models/translation.model'
 import day1 from './lessons/day1.lesson'
+import day2 from './lessons/day2.lesson'
 import dsDay1 from './lessons/dataScience/day01WhatIsDataScience.lesson'
 import dsDay2 from './lessons/dataScience/day02DataStatistics.lesson'
 import dsDay3 from './lessons/dataScience/day03ThinkingWithData.lesson'
@@ -37,11 +38,7 @@ const myanmar: ContentTranslation = {
   },
   lessons: {
     'day-1': day1,
-    'day-2': {
-      title: 'ဂဏန်းများ၊ operator များ နှင့် ဂဏန်းပေါင်းစက်',
-      summary: 'မကြာမီ လာမည်။',
-      topics: ['Type ပြောင်းခြင်း', 'Operator များ', 'ဂဏန်းပေါင်းစက်']
-    },
+    'day-2': day2,
     'ds-1': dsDay1,
     'ds-2': dsDay2,
     'ds-3': dsDay3,

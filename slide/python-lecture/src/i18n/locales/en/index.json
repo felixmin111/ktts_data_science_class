@@ -12,6 +12,7 @@
     "playground": "Playground",
     "history": "My history",
     "teacher": "Class dashboard",
+    "admin": "Admin Dashboard",
     "logout": "Log out",
     "account": "Account"
   },

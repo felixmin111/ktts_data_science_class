@@ -58,7 +58,12 @@ export interface QuizBlock {
   explanation: string
 }
 
+export interface MemoryBlock {
+  type: 'memory'
+}
+
 export type LessonBlock =
+  | MemoryBlock
   | TextBlock
   | CodeBlock
   | AnalogyBlock

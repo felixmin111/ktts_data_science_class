@@ -2,6 +2,7 @@ import type { Lesson, Track, TrackId } from '@/models/lesson.model'
 import { localize } from '@/functions/localize.function'
 import { activeContentTranslation } from '@/i18n/content'
 import day1 from './day1.lesson'
+import day2 from './day2.lesson'
 import dsDay1 from './dataScience/day01WhatIsDataScience.lesson'
 import dsDay2 from './dataScience/day02DataStatistics.lesson'
 import dsDay3 from './dataScience/day03ThinkingWithData.lesson'
@@ -29,25 +30,9 @@ export const tracks: Track[] = [
   }
 ]
 
-const comingSoon = (day: number, title: string, topics: string[]): Lesson => ({
-  id: `day-${day}`,
-  track: 'foundations',
-  day,
-  title,
-  summary: 'Coming soon.',
-  durationMinutes: 60,
-  topics,
-  sections: [],
-  available: false
-})
-
 export const lessons: Lesson[] = [
   day1,
-  comingSoon(2, 'Numbers, operators and a calculator', [
-    'Type conversion',
-    'Operators',
-    'Calculator'
-  ]),
+  day2,
   dsDay1,
   dsDay2,
   dsDay3,

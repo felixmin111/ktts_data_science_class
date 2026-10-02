@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { findGame } from '@/data/games'
-import { findLesson, lessonLabel } from '@/data/lessons'
+import { lessons, findLesson, lessonLabel } from '@/data/lessons'
+import { lessonCompletion } from '@/functions/progress.function'
 import type { GameResult, SectionVisit } from '@/models/progress.model'
 
 const props = defineProps<{ progress: SectionVisit[]; gameResults: GameResult[] }>()
@@ -15,6 +16,9 @@ interface LessonRow {
   percent: number
   sectionsVisited: number
   lastVisitedAt: string
+  total: number
+  status: string
+  sections: ReturnType<typeof lessonCompletion>['sections']
 }
 
 const lessonRows = computed<LessonRow[]>(() => {
@@ -22,16 +26,21 @@ const lessonRows = computed<LessonRow[]>(() => {
   for (const visit of props.progress) {
     byLesson.set(visit.lessonId, [...(byLesson.get(visit.lessonId) ?? []), visit])
   }
-  return [...byLesson.entries()]
-    .map(([lessonId, visits]) => {
-      const lesson = findLesson(lessonId)
-      const total = lesson?.sections.length ?? 0
+  return lessons
+    .map((source) => {
+      const lessonId = source.id
+      const lesson = findLesson(lessonId) ?? source
+      const visits = byLesson.get(lessonId) ?? []
+      const completion = lessonCompletion(lesson, visits)
       return {
         lessonId,
         label: lesson ? lessonLabel(lesson) : '',
         title: lesson?.title ?? lessonId,
-        percent: total ? Math.min(100, Math.round((visits.length / total) * 100)) : 0,
-        sectionsVisited: visits.length,
+        percent: completion.percent,
+        sectionsVisited: completion.visited,
+        total: completion.total,
+        status: completion.status,
+        sections: completion.sections,
         lastVisitedAt:
           visits
             .map((visit) => visit.lastVisitedAt)
@@ -52,7 +61,10 @@ const bestByGame = computed(() => {
 })
 
 const stats = computed(() => [
-  { key: 'lessonsStarted', value: lessonRows.value.length },
+  {
+    key: 'lessonsStarted',
+    value: lessonRows.value.filter((row) => row.sectionsVisited > 0).length
+  },
   { key: 'sectionsVisited', value: props.progress.length },
   { key: 'gamesPlayed', value: props.gameResults.length },
   {
@@ -69,6 +81,7 @@ const stats = computed(() => [
 
 const lessonColumns = computed(() => [
   { title: t('history.lesson'), key: 'lesson' },
+  { title: t('teacher.status'), key: 'status', width: 160 },
   { title: t('history.progress'), key: 'percent', width: 220 },
   { title: t('history.lastVisited'), key: 'lastVisitedAt', width: 200 }
 ])
@@ -93,6 +106,7 @@ const gameColumns = computed(() => [
 
     <section class="report__block">
       <h2>{{ t('history.lessonsTitle') }}</h2>
+      <p class="report__note">{{ t('teacher.completionNote') }}</p>
       <a-table
         :columns="lessonColumns"
         :data-source="lessonRows"
@@ -101,12 +115,36 @@ const gameColumns = computed(() => [
         :scroll="{ x: 'max-content' }"
         :locale="{ emptyText: t('history.noLessons') }"
       >
+        <template #expandedRowRender="{ record }">
+          <ul class="report__sections">
+            <li v-for="section in record.sections" :key="section.id">
+              <a-tag :color="section.visited ? 'green' : 'default'">
+                {{ t(section.visited ? 'teacher.opened' : 'teacher.notOpened') }}
+              </a-tag>
+              {{ section.title }}
+            </li>
+          </ul>
+        </template>
         <template #bodyCell="{ column, record }">
           <template v-if="column.key === 'lesson'">
             <span class="report__muted">{{ record.label }}</span> · {{ record.title }}
           </template>
+          <template v-else-if="column.key === 'status'">
+            <a-tag
+              :color="
+                record.status === 'completed'
+                  ? 'green'
+                  : record.status === 'inProgress'
+                    ? 'blue'
+                    : 'default'
+              "
+            >
+              {{ t(`teacher.${record.status}`) }}
+            </a-tag>
+          </template>
           <template v-else-if="column.key === 'percent'">
             <a-progress :percent="record.percent" size="small" stroke-color="#2A62A6" />
+            <span class="report__muted">{{ record.sectionsVisited }} / {{ record.total }}</span>
           </template>
           <template v-else-if="column.key === 'lastVisitedAt'">
             {{ formatDate(record.lastVisitedAt) }}
@@ -117,6 +155,7 @@ const gameColumns = computed(() => [
 
     <section class="report__block">
       <h2>{{ t('history.gamesTitle') }}</h2>
+      <p class="report__note">{{ t('teacher.recentGamesNote') }}</p>
       <a-table
         :columns="gameColumns"
         :data-source="gameResults"
@@ -148,6 +187,18 @@ const gameColumns = computed(() => [
 
 <style scoped lang="scss">
 .report {
+  &__note {
+    margin-bottom: 16px;
+    color: $color-muted;
+  }
+  &__sections {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  &__sections li {
+    margin: 8px 0;
+  }
   &__stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

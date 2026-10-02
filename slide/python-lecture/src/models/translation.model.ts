@@ -4,6 +4,7 @@ import type {
   CaseStudyBlock,
   CodeBlock,
   LessonSection,
+  MemoryBlock,
   QuizBlock,
   TableBlock,
   TextBlock,
@@ -19,6 +20,7 @@ import type { GameDefinition, GameQuestion } from './game.model'
  * still lines up with its source.
  */
 export type BlockTranslation =
+  | MemoryBlock
   | Pick<TextBlock, 'type' | 'body'>
   | (Pick<CodeBlock, 'type'> & Partial<Pick<CodeBlock, 'title'>>)
   | Pick<AnalogyBlock, 'type' | 'title' | 'body'>

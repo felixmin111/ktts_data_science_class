@@ -62,6 +62,16 @@ const links = computed(() => [
 
       <LanguageSwitcher />
 
+      <RouterLink
+        v-if="isTeacher"
+        :to="{ name: Routes.TEACHER.name }"
+        class="nav__admin"
+        :aria-current="route.meta.menuKey === Routes.TEACHER.menuKey ? 'page' : undefined"
+      >
+        <IconMdiAccountGroup />
+        {{ t('nav.admin') }}
+      </RouterLink>
+
       <label v-if="isTeacher" class="nav__teacher">
         <a-switch v-model:checked="teacherMode" size="small" />
         <span>{{ t('common.teacherMode') }}</span>
@@ -166,6 +176,32 @@ const links = computed(() => [
     font-size: 13px;
     color: $color-muted;
     cursor: pointer;
+  }
+
+  &__admin {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    flex-shrink: 0;
+    padding: 8px 12px;
+    border-radius: $radius-sm;
+    background: $color-blue;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+
+    &:hover,
+    &[aria-current='page'] {
+      background: $color-ink;
+      color: #fff;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-amber;
+      outline-offset: 3px;
+    }
   }
 
   &__account {
