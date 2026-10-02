@@ -73,7 +73,7 @@ function reset() {
         {{ block.explanation }}
       </p>
       <p v-else class="flow-exercise__result">{{ block.explanation }}</p>
-      <CodeRunner :code="code" :title="t('game.flow.asCode')" />
+      <CodeRunner v-if="!block.hideCode" :code="code" :title="t('game.flow.asCode')" />
       <div class="flow-exercise__actions">
         <a-button @click="reset">
           <template #icon><IconMdiRestart /></template>

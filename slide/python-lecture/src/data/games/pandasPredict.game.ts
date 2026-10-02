@@ -7,7 +7,7 @@ const pandasPredict: GameDefinition = {
   icon: 'table',
   color: '#7B5EA7',
   track: 'data-science',
-  day: 7,
+  day: 10,
   secondsPerQuestion: 25,
   questionsPerRound: 8,
   bank: [

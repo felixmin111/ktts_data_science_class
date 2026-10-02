@@ -49,5 +49,8 @@
     "variables": "Variables",
     "asCode": "The same flowchart as Python",
     "chartLabel": "Flowchart: click the block that runs"
+  },
+  "loop": {
+    "skip": "Skip animation"
   }
 }

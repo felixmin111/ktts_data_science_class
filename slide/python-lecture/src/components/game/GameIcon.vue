@@ -17,5 +17,6 @@ defineProps<{ icon: GameDefinition['icon'] }>()
   <IconMdiScaleBalance v-else-if="icon === 'scale-balance'" />
   <IconMdiSourceBranch v-else-if="icon === 'source-branch'" />
   <IconMdiSitemap v-else-if="icon === 'sitemap'" />
+  <IconMdiRefresh v-else-if="icon === 'refresh'" />
   <IconMdiChartBar v-else />
 </template>

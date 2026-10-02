@@ -27,9 +27,9 @@ const day7: LessonTranslation = {
           type: 'table',
           columns: ['အရင်က idea', 'pandas ပုံစံ'],
           rows: [
-            ['ဂဏန်း list (Day 4)', 'Series'],
-            ['NumPy array (Day 6)', 'Series ထဲက value များ'],
-            ['dict တွေရဲ့ list (Day 4)', 'DataFrame'],
+            ['ဂဏန်း list (Day 7)', 'Series'],
+            ['NumPy array (Day 9)', 'Series ထဲက value များ'],
+            ['dict တွေရဲ့ list (Day 7)', 'DataFrame'],
             ['dict key များ', 'column နာမည်များ'],
             ['list position များ', 'index (row label များ)']
           ]
@@ -62,7 +62,7 @@ const day7: LessonTranslation = {
         }
       ],
       notes:
-        'unit_price mean နဲ့ quantity min က 1၊ max က 4 ဆိုတာ ထောက်ပြပါ — describe() က မဖြစ်နိုင်တဲ့ value တွေကို ရှာဖွေတဲ့ နည်းလမ်း (Day 8 မှာ အနုတ် quantity တွေကို တွေ့ရမယ်)။'
+        'unit_price mean နဲ့ quantity min က 1၊ max က 4 ဆိုတာ ထောက်ပြပါ — describe() က မဖြစ်နိုင်တဲ့ value တွေကို ရှာဖွေတဲ့ နည်းလမ်း (Day 11 မှာ အနုတ် quantity တွေကို တွေ့ရမယ်)။'
     },
     {
       id: 'selecting',
@@ -90,7 +90,7 @@ const day7: LessonTranslation = {
         {
           type: 'text',
           body: [
-            'Day 6 က NumPy stencil အတိအကျပဲ: နှိုင်းယှဉ်ချက်က True/False Series ကို ပေးပြီး `df[mask]` က True row တွေကို ထားတယ်။'
+            'Day 9 က NumPy stencil အတိအကျပဲ: နှိုင်းယှဉ်ချက်က True/False Series ကို ပေးပြီး `df[mask]` က True row တွေကို ထားတယ်။'
           ]
         },
         { type: 'code' },

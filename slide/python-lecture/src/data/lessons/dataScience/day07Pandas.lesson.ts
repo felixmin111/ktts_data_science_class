@@ -4,7 +4,7 @@ import { py } from '../py'
 const day7: Lesson = {
   id: 'ds-7',
   track: 'data-science',
-  day: 7,
+  day: 10,
   title: 'pandas: spreadsheets with superpowers',
   summary:
     'Series and DataFrames, loading a CSV, selecting with loc/iloc, filtering, new columns, sorting and dates.',
@@ -52,9 +52,9 @@ print(type(df["price"]))     # each column is a Series
           type: 'table',
           columns: ['Earlier idea', 'pandas version'],
           rows: [
-            ['list of numbers (Day 4)', 'Series'],
-            ['NumPy array (Day 6)', 'the values inside a Series'],
-            ['list of dicts (Day 4)', 'DataFrame'],
+            ['list of numbers (Day 7)', 'Series'],
+            ['NumPy array (Day 9)', 'the values inside a Series'],
+            ['list of dicts (Day 7)', 'DataFrame'],
             ['dict keys', 'column names'],
             ['list positions', 'the index (row labels)']
           ]
@@ -112,7 +112,7 @@ print(df["item"].nunique(), "different items")
         }
       ],
       notes:
-        'Point out the unit_price mean and that quantity min is 1, max is 4 — describe() is how you spot impossible values (we will meet negative quantities in Day 8).'
+        'Point out the unit_price mean and that quantity min is 1, max is 4 — describe() is how you spot impossible values (we will meet negative quantities in Day 11).'
     },
     {
       id: 'selecting',
@@ -160,7 +160,7 @@ print(df.iloc[-1])                           # the last row
         {
           type: 'text',
           body: [
-            'Exactly the NumPy stencil from Day 6: a comparison gives a True/False Series, and `df[mask]` keeps the True rows.'
+            'Exactly the NumPy stencil from Day 9: a comparison gives a True/False Series, and `df[mask]` keeps the True rows.'
           ]
         },
         {

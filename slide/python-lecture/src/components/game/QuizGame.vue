@@ -29,10 +29,21 @@ const best = computed(() => useScoreStore().bestFor(props.game.id))
 const rank = computed(() => rankFor(correctCount.value / Math.max(1, questions.value.length)))
 const isLast = computed(() => index.value + 1 >= questions.value.length)
 
-/** Flowchart questions hold back the feedback until the path animation has finished. */
+/** Diagram questions (flowchart, loop) hold back the feedback until their animation has finished. */
 const flowDone = ref(false)
 watch(index, () => (flowDone.value = false))
-const feedbackReady = computed(() => !current.value?.flow || flowDone.value)
+const hasDiagram = computed(() => Boolean(current.value?.flow || current.value?.loop))
+const feedbackReady = computed(() => !hasDiagram.value || flowDone.value)
+
+/** Loop questions: run the loop at double speed once the player has answered. */
+const loopBoard = useTemplateRef<{ play: () => void; skip: () => void; fast: boolean }>('loopBoard')
+watch(phase, async (now) => {
+  if (now !== 'feedback' || !current.value?.loop) return
+  await nextTick()
+  if (!loopBoard.value) return
+  loopBoard.value.fast = true
+  loopBoard.value.play()
+})
 const feedbackEl = useTemplateRef<HTMLElement>('feedback')
 watch(flowDone, async (done) => {
   if (!done) return
@@ -117,6 +128,13 @@ function optionState(optionIndex: number) {
         @choose="engine.answer($event)"
         @done="flowDone = true"
       />
+      <LoopBoard
+        v-else-if="current.loop"
+        ref="loopBoard"
+        :key="`loop-${index}`"
+        :program="current.loop"
+        @done="flowDone = true"
+      />
       <CodeRunner v-else-if="current.code" :key="index" :code="current.code" />
 
       <div v-if="!current.flow" class="game__options">
@@ -132,6 +150,12 @@ function optionState(optionIndex: number) {
           <span class="option__key">{{ optionIndex + 1 }}</span>
           <code class="option__text">{{ option }}</code>
         </button>
+      </div>
+
+      <div v-if="phase === 'feedback' && current.loop && !feedbackReady" class="game__skip">
+        <a-button type="text" @click="loopBoard?.skip()">
+          {{ t('game.loop.skip') }}
+        </a-button>
       </div>
 
       <div
@@ -157,10 +181,10 @@ function optionState(optionIndex: number) {
         </a-button>
       </div>
       <CodeRunner
-        v-if="current.flow && phase === 'feedback' && feedbackReady && current.code"
+        v-if="hasDiagram && phase === 'feedback' && feedbackReady && current.code"
         :key="`code-${index}`"
         :code="current.code"
-        :title="t('game.flow.asCode')"
+        :title="current.loop ? t('lesson.loop.asCode') : t('game.flow.asCode')"
       />
     </section>
 
@@ -329,6 +353,11 @@ function optionState(optionIndex: number) {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 12px;
+  }
+
+  &__skip {
+    display: flex;
+    justify-content: flex-end;
   }
 
   &__feedback {

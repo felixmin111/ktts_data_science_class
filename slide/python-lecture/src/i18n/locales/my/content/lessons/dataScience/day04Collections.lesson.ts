@@ -94,7 +94,7 @@ const day4: LessonTranslation = {
         { type: 'code' },
         {
           type: 'table',
-          columns: ['Python', 'Spreadsheet စကားလုံး', 'pandas စကားလုံး (Day 7)'],
+          columns: ['Python', 'Spreadsheet စကားလုံး', 'pandas စကားလုံး (Day 10)'],
           rows: [
             ['List တစ်ခုလုံး', 'orders', 'DataFrame'],
             ['Dict တစ်ခု', 'orders[0]', 'row တစ်ခု'],
@@ -108,7 +108,7 @@ const day4: LessonTranslation = {
         }
       ],
       notes:
-        'Order အားလုံးကို ပေါင်းဖို့ loop လိုတယ် — ဒါက Day 5 အတွက် စေ့ဆော်ချက် အတိအကျပါ။ မေးပါ: order 240 ခုရဲ့ revenue ကို ဘယ်လို ပေါင်းမလဲ? (Loop လိုအပ်ကြောင်း ကိုယ်တိုင် ခံစားမိပါစေ။)'
+        'Order အားလုံးကို ပေါင်းဖို့ loop လိုတယ် — ဒါက Day 8 အတွက် စေ့ဆော်ချက် အတိအကျပါ။ မေးပါ: order 240 ခုရဲ့ revenue ကို ဘယ်လို ပေါင်းမလဲ? (Loop လိုအပ်ကြောင်း ကိုယ်တိုင် ခံစားမိပါစေ။)'
     },
     {
       id: 'tuples-sets',

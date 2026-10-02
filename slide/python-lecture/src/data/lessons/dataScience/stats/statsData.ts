@@ -1,0 +1,280 @@
+/**
+ * Example data sets for the statistics lessons (Data Science Day 2 and Day 3).
+ * Invented for teaching; generated once with a fixed random seed so every table and chart agrees.
+ */
+
+/** Minutes from order to door for 50 food deliveries (Chapter 2 histogram). */
+export const deliveryTimes = [
+  21, 21, 12, 37, 24, 18, 24, 17, 12, 24, 13, 22, 24, 23, 32, 35, 27, 26, 21, 27, 35, 36, 21, 29,
+  18, 23, 25, 17, 21, 30, 17, 23, 20, 32, 25, 21, 25, 17, 31, 13, 41, 18, 14, 13, 17, 27, 23, 29,
+  29, 17
+]
+
+/** Drinks ordered by 40 customers at a café (Chapter 2 frequency table). */
+export const drinks = [
+  'Coffee',
+  'Coffee',
+  'Smoothie',
+  'Tea',
+  'Juice',
+  'Smoothie',
+  'Tea',
+  'Coffee',
+  'Tea',
+  'Tea',
+  'Tea',
+  'Coffee',
+  'Tea',
+  'Water',
+  'Tea',
+  'Coffee',
+  'Smoothie',
+  'Juice',
+  'Smoothie',
+  'Tea',
+  'Tea',
+  'Coffee',
+  'Water',
+  'Coffee',
+  'Juice',
+  'Tea',
+  'Juice',
+  'Coffee',
+  'Coffee',
+  'Tea',
+  'Tea',
+  'Coffee',
+  'Tea',
+  'Juice',
+  'Juice',
+  'Juice',
+  'Water',
+  'Coffee',
+  'Smoothie',
+  'Tea'
+]
+
+/** Scores of 40 students on Quiz 1, sorted. */
+export const quiz1 = [
+  28, 42, 53, 56, 57, 60, 61, 62, 62, 64, 64, 64, 66, 67, 68, 68, 72, 73, 78, 79, 80, 80, 82, 85,
+  85, 87, 88, 88, 89, 90, 91, 91, 91, 91, 93, 93, 94, 95, 97, 99
+]
+
+/** Scores of the same class on Quiz 2, after weekly practice sessions, sorted. */
+export const quiz2 = [
+  59, 62, 62, 67, 68, 72, 73, 73, 74, 74, 75, 76, 76, 78, 78, 79, 80, 81, 81, 83, 83, 83, 85, 87,
+  87, 88, 88, 89, 89, 90, 90, 90, 91, 91, 91, 93, 93, 93, 95, 98
+]
+
+/** Branch visited by each of 90 surveyed customers. */
+export const branch = [
+  'Campus',
+  'Campus',
+  'Downtown',
+  'Station',
+  'Downtown',
+  'Campus',
+  'Downtown',
+  'Station',
+  'Campus',
+  'Station',
+  'Campus',
+  'Campus',
+  'Campus',
+  'Campus',
+  'Campus',
+  'Downtown',
+  'Downtown',
+  'Campus',
+  'Campus',
+  'Station',
+  'Station',
+  'Downtown',
+  'Station',
+  'Downtown',
+  'Downtown',
+  'Campus',
+  'Downtown',
+  'Downtown',
+  'Campus',
+  'Campus',
+  'Station',
+  'Station',
+  'Campus',
+  'Station',
+  'Station',
+  'Campus',
+  'Campus',
+  'Downtown',
+  'Station',
+  'Campus',
+  'Station',
+  'Downtown',
+  'Downtown',
+  'Campus',
+  'Downtown',
+  'Downtown',
+  'Station',
+  'Campus',
+  'Downtown',
+  'Station',
+  'Station',
+  'Station',
+  'Downtown',
+  'Downtown',
+  'Downtown',
+  'Downtown',
+  'Downtown',
+  'Station',
+  'Downtown',
+  'Downtown',
+  'Campus',
+  'Station',
+  'Station',
+  'Station',
+  'Downtown',
+  'Campus',
+  'Campus',
+  'Downtown',
+  'Station',
+  'Downtown',
+  'Campus',
+  'Station',
+  'Campus',
+  'Campus',
+  'Campus',
+  'Station',
+  'Downtown',
+  'Downtown',
+  'Campus',
+  'Station',
+  'Campus',
+  'Station',
+  'Station',
+  'Station',
+  'Downtown',
+  'Station',
+  'Downtown',
+  'Station',
+  'Station',
+  'Campus'
+]
+
+/** Satisfaction reported by the same 90 customers (same order as branch). */
+export const satisfaction = [
+  'High',
+  'High',
+  'High',
+  'High',
+  'Medium',
+  'High',
+  'Medium',
+  'Medium',
+  'Medium',
+  'Medium',
+  'High',
+  'High',
+  'Low',
+  'Medium',
+  'High',
+  'High',
+  'Medium',
+  'High',
+  'High',
+  'Medium',
+  'Medium',
+  'Medium',
+  'Medium',
+  'Medium',
+  'Medium',
+  'High',
+  'High',
+  'High',
+  'High',
+  'High',
+  'Medium',
+  'Low',
+  'High',
+  'Low',
+  'Medium',
+  'High',
+  'High',
+  'Medium',
+  'Medium',
+  'High',
+  'High',
+  'Medium',
+  'High',
+  'Medium',
+  'High',
+  'High',
+  'Low',
+  'High',
+  'High',
+  'Low',
+  'Low',
+  'Medium',
+  'High',
+  'High',
+  'Low',
+  'High',
+  'High',
+  'Low',
+  'High',
+  'Low',
+  'High',
+  'Low',
+  'Medium',
+  'Low',
+  'High',
+  'High',
+  'High',
+  'High',
+  'Medium',
+  'High',
+  'Low',
+  'Low',
+  'Medium',
+  'High',
+  'Medium',
+  'Medium',
+  'High',
+  'Medium',
+  'Medium',
+  'Low',
+  'High',
+  'High',
+  'Low',
+  'Medium',
+  'High',
+  'Medium',
+  'Low',
+  'High',
+  'Low',
+  'High'
+]
+
+/** Hours studied by 12 students. */
+export const hours = [1, 2, 2, 3, 4, 4, 5, 6, 6, 7, 8, 9]
+
+/** Exam score of the same 12 students. */
+export const score = [52, 48, 48, 63, 63, 69, 70, 76, 69, 75, 88, 92]
+
+/** Mobile data used last month (GB) by 40 randomly chosen students (Chapter 1 case 1). */
+export const dataUsage = [
+  3.3, 7.4, 2.9, 7.0, 14.0, 0.4, 5.8, 5.5, 1.8, 1.2, 3.1, 5.6, 5.4, 5.7, 1.6, 2.9, 3.0, 3.6, 2.8,
+  1.0, 3.5, 4.5, 5.8, 3.8, 4.3, 3.7, 3.7, 7.4, 5.8, 2.1, 2.2, 2.2, 10.1, 7.4, 2.8, 8.0, 0.9, 2.4,
+  3.6, 7.3
+]
+
+/** Composite rating (5 to 35) from 30 café customers (Chapter 1 case 2). */
+export const ratings = [
+  34, 30, 33, 24, 35, 30, 30, 31, 29, 31, 35, 26, 29, 33, 30, 25, 29, 34, 26, 19, 26, 25, 29, 27,
+  31, 26, 33, 31, 34, 22
+]
+
+/** Fill volume (ml) of one bottle sampled each hour for 24 hours (Chapter 1 case 3). */
+export const fills = [
+  499.8, 499.6, 500.1, 499.7, 499.5, 499.8, 500.4, 499.7, 500.4, 501.1, 499.7, 499.8, 499.3, 500.4,
+  499.0, 500.0, 501.0, 499.9, 499.8, 499.7, 499.7, 499.4, 501.3, 500.9
+]

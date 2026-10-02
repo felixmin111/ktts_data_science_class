@@ -23,7 +23,7 @@ const caseMatch: GameDefinition = {
   icon: 'briefcase-search-outline',
   color: '#7B5EA7',
   track: 'data-science',
-  day: 3,
+  day: 1,
   secondsPerQuestion: 20,
   questionsPerRound: 10,
   bank: [

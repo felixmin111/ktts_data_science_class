@@ -7,7 +7,7 @@ const statsIntuition: GameDefinition = {
   icon: 'sigma',
   color: '#2A62A6',
   track: 'data-science',
-  day: 2,
+  day: 4,
   secondsPerQuestion: 20,
   questionsPerRound: 10,
   bank: [

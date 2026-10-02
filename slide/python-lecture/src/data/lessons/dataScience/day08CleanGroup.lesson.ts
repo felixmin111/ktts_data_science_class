@@ -4,7 +4,7 @@ import { py } from '../py'
 const day8: Lesson = {
   id: 'ds-8',
   track: 'data-science',
-  day: 8,
+  day: 11,
   title: 'Cleaning, grouping and joining data',
   summary:
     'Fix messy text, duplicates and missing values; then answer real questions with groupby, pivot tables and merge.',
@@ -70,7 +70,7 @@ print(raw["quantity"].describe()[["min", "max"]])
 import pandas as pd
 
 raw = pd.read_csv("cafe_sales_raw.csv")
-df = raw.copy()                     # never overwrite the raw data (Day 4: copies!)
+df = raw.copy()                     # never overwrite the raw data (Day 7: copies!)
 
 df["item"] = df["item"].str.strip().str.title()
 df["branch"] = df["branch"].str.strip().str.title()
@@ -159,7 +159,7 @@ print(df.shape)
         {
           type: 'text',
           body: [
-            'Remember the hand-written jar-sorting loop in Day 5? `groupby` is that, in one line, for any number of rows.'
+            'Remember the hand-written jar-sorting loop in Day 8? `groupby` is that, in one line, for any number of rows.'
           ]
         },
         {

@@ -120,7 +120,7 @@ const day1: Lesson = {
         {
           type: 'code',
           runnable: true,
-          title: 'Descriptive analytics in three lines (you will write this on Day 7)',
+          title: 'Descriptive analytics in three lines (you will write this on Day 10)',
           code: py`
 import pandas as pd
 
@@ -149,12 +149,12 @@ print(df.groupby("branch")["revenue"].sum())   # "What happened?"
           type: 'table',
           columns: ['Step', 'Question it answers', 'In this course'],
           rows: [
-            ['1. Ask', 'What decision are we trying to make?', 'Days 1–3 (theory)'],
-            ['2. Collect', 'Where is the data?', 'CSV files, pd.read_csv() — Day 7'],
-            ['3. Clean', 'Is the data trustworthy?', 'pandas cleaning — Day 8'],
-            ['4. Explore', 'What patterns exist?', 'NumPy, pandas, groupby — Days 6–8'],
-            ['5. Visualize', 'How do we see it?', 'matplotlib — Day 9'],
-            ['6. Communicate', 'What should we do?', 'A short report — Day 10']
+            ['1. Ask', 'What decision are we trying to make?', 'Days 1–6 (theory and statistics)'],
+            ['2. Collect', 'Where is the data?', 'CSV files, pd.read_csv() — Day 10'],
+            ['3. Clean', 'Is the data trustworthy?', 'pandas cleaning — Day 11'],
+            ['4. Explore', 'What patterns exist?', 'NumPy, pandas, groupby — Days 9–11'],
+            ['5. Visualize', 'How do we see it?', 'matplotlib — Day 12'],
+            ['6. Communicate', 'What should we do?', 'A short report — Day 13']
           ]
         },
         {
@@ -272,7 +272,7 @@ print(df.groupby("branch")["revenue"].sum())   # "What happened?"
           type: 'callout',
           tone: 'success',
           title: 'Your path',
-          body: 'Most people start as a data analyst: Python + pandas + charts + clear communication — exactly Days 4–10 of this course.'
+          body: 'Most people start as a data analyst: Python + pandas + charts + clear communication — exactly Days 7–13 of this course.'
         }
       ]
     },

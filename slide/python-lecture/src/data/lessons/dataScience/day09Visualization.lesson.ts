@@ -4,7 +4,7 @@ import { py } from '../py'
 const day9: Lesson = {
   id: 'ds-9',
   track: 'data-science',
-  day: 9,
+  day: 12,
   title: 'Visualization: making data visible',
   summary:
     'Pick the right chart for the question, then draw line, bar, histogram and scatter charts with matplotlib and pandas.',

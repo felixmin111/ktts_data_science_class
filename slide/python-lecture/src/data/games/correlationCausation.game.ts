@@ -16,7 +16,7 @@ const correlationCausation: GameDefinition = {
   icon: 'link-variant',
   color: '#B03A1E',
   track: 'data-science',
-  day: 3,
+  day: 4,
   secondsPerQuestion: 20,
   questionsPerRound: 10,
   bank: [

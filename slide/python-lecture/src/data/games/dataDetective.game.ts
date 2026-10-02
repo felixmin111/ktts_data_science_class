@@ -23,7 +23,7 @@ const dataDetective: GameDefinition = {
   icon: 'broom',
   color: '#2E7550',
   track: 'data-science',
-  day: 8,
+  day: 11,
   secondsPerQuestion: 15,
   questionsPerRound: 10,
   bank: [

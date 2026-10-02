@@ -1,9 +1,13 @@
 import type { ContentTranslation } from '@/models/translation.model'
 import day1 from './lessons/day1.lesson'
 import day2 from './lessons/day2.lesson'
+import day3 from './lessons/day3.lesson'
 import dsDay1 from './lessons/dataScience/day01WhatIsDataScience.lesson'
 import dsDay2 from './lessons/dataScience/day02DataStatistics.lesson'
 import dsDay3 from './lessons/dataScience/day03ThinkingWithData.lesson'
+import dsStats3 from './lessons/dataScience/day04StatsNumerical.lesson'
+import dsStats4 from './lessons/dataScience/day05StatsProbability.lesson'
+import dsStats5 from './lessons/dataScience/day06StatsDiscrete.lesson'
 import dsDay4 from './lessons/dataScience/day04Collections.lesson'
 import dsDay5 from './lessons/dataScience/day05LoopsFunctions.lesson'
 import dsDay6 from './lessons/dataScience/day06Numpy.lesson'
@@ -18,6 +22,7 @@ import operatorChallenge from './games/operatorChallenge.game'
 import trueOrFalse from './games/trueOrFalse.game'
 import pathFinder from './games/pathFinder.game'
 import flowTracer from './games/flowTracer.game'
+import loopRunner from './games/loopRunner.game'
 import caseMatch from './games/caseMatch.game'
 import statsIntuition from './games/statsIntuition.game'
 import correlationCausation from './games/correlationCausation.game'
@@ -36,16 +41,20 @@ const myanmar: ContentTranslation = {
     'data-science': {
       title: 'Data Science အတွက် Python',
       description:
-        'Day 1–3: သီအိုရီ နှင့် လက်တွေ့ ဖြစ်ရပ်များ။ Day 4–10: Python၊ NumPy၊ pandas နှင့် chart များ၊ နောက်ဆုံးမှာ လက်တွေ့ analysis project တစ်ခုဖြင့် အဆုံးသတ်မည်။',
+        'Day 1–6: သီအိုရီ နှင့် စာရင်းအင်း (data၊ graph၊ ဂဏန်း အနှစ်ချုပ်၊ probability နှင့် distribution)။ Day 7–13: Python၊ NumPy၊ pandas နှင့် chart များ၊ နောက်ဆုံးမှာ လက်တွေ့ analysis project တစ်ခုဖြင့် အဆုံးသတ်မည်။',
       labelPrefix: 'Day'
     }
   },
   lessons: {
     'day-1': day1,
     'day-2': day2,
+    'day-3': day3,
     'ds-1': dsDay1,
     'ds-2': dsDay2,
     'ds-3': dsDay3,
+    'ds-stats-3': dsStats3,
+    'ds-stats-4': dsStats4,
+    'ds-stats-5': dsStats5,
     'ds-4': dsDay4,
     'ds-5': dsDay5,
     'ds-6': dsDay6,
@@ -62,6 +71,7 @@ const myanmar: ContentTranslation = {
     'true-or-false': trueOrFalse,
     'path-finder': pathFinder,
     'flow-tracer': flowTracer,
+    'loop-runner': loopRunner,
     'case-match': caseMatch,
     'stats-intuition': statsIntuition,
     'correlation-causation': correlationCausation,

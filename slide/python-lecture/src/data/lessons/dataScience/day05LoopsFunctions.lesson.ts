@@ -4,7 +4,7 @@ import { py } from '../py'
 const day5: Lesson = {
   id: 'ds-5',
   track: 'data-science',
-  day: 5,
+  day: 8,
   title: 'Decisions, loops and functions for data',
   summary:
     'if/else, for loops, comprehensions and functions — the logic that pandas later does for you, so you know what it is doing.',
@@ -137,7 +137,7 @@ for item, price in zip(items, prices):   # walk two lists side by side
         {
           type: 'text',
           body: [
-            'Put a loop and an `if` together and you can answer real questions about a table. Notice the second program: counting into a dict is a **manual groupby** — pandas will do this in one line in Day 8.'
+            'Put a loop and an `if` together and you can answer real questions about a table. Notice the second program: counting into a dict is a **manual groupby** — pandas will do this in one line in Day 11.'
           ]
         },
         {
@@ -173,7 +173,7 @@ print(revenue_by_branch)
         }
       ],
       notes:
-        'Let her try to write revenue_by_branch herself first. This is the hardest program so far; the payoff is understanding groupby deeply in Day 8.'
+        'Let her try to write revenue_by_branch herself first. This is the hardest program so far; the payoff is understanding groupby deeply in Day 11.'
     },
     {
       id: 'comprehensions',
@@ -274,7 +274,7 @@ print("a =", a, "| b =", b)
           type: 'text',
           body: [
             '**Theory.** An **algorithm** is a precise, finite list of steps — a recipe a computer can follow. Before machine learning, “intelligent” systems were mostly hand-written if/else rules, called **rule-based systems** (or expert systems). They are still everywhere because they are simple to explain and audit.',
-            'Machine learning (Day 3) flips this: instead of writing the rules, you give examples and the computer **learns** them. Knowing how to write rules yourself is how you understand what a model is doing.'
+            'Machine learning flips this: instead of writing the rules, you give examples and the computer **learns** them. Knowing how to write rules yourself is how you understand what a model is doing.'
           ]
         },
         {
@@ -386,7 +386,7 @@ print(summarize(orders))
           type: 'callout',
           tone: 'info',
           title: 'Coming next',
-          body: 'That was ~15 lines for 4 orders. In Day 7, pandas answers the same questions about 240 orders in about 4 lines — and now you know what it does underneath.'
+          body: 'That was ~15 lines for 4 orders. In Day 10, pandas answers the same questions about 240 orders in about 4 lines — and now you know what it does underneath.'
         }
       ],
       notes:

@@ -3,9 +3,13 @@ import { localize } from '@/functions/localize.function'
 import { activeContentTranslation } from '@/i18n/content'
 import day1 from './day1.lesson'
 import day2 from './day2.lesson'
+import day3 from './day3.lesson'
 import dsDay1 from './dataScience/day01WhatIsDataScience.lesson'
 import dsDay2 from './dataScience/day02DataStatistics.lesson'
 import dsDay3 from './dataScience/day03ThinkingWithData.lesson'
+import dsStats3 from './dataScience/day04StatsNumerical.lesson'
+import dsStats4 from './dataScience/day05StatsProbability.lesson'
+import dsStats5 from './dataScience/day06StatsDiscrete.lesson'
 import dsDay4 from './dataScience/day04Collections.lesson'
 import dsDay5 from './dataScience/day05LoopsFunctions.lesson'
 import dsDay6 from './dataScience/day06Numpy.lesson'
@@ -25,7 +29,7 @@ export const tracks: Track[] = [
     id: 'data-science',
     title: 'Python for Data Science',
     description:
-      'Days 1–3: the theory, with real-world case studies. Days 4–10: Python, NumPy, pandas and charts, ending with a real analysis project.',
+      'Days 1–6: the theory and statistics (data, graphs, numerical summaries, probability and distributions). Days 7–13: Python, NumPy, pandas and charts, ending with a real analysis project.',
     labelPrefix: 'Day'
   }
 ]
@@ -33,9 +37,13 @@ export const tracks: Track[] = [
 export const lessons: Lesson[] = [
   day1,
   day2,
+  day3,
   dsDay1,
   dsDay2,
   dsDay3,
+  dsStats3,
+  dsStats4,
+  dsStats5,
   dsDay4,
   dsDay5,
   dsDay6,

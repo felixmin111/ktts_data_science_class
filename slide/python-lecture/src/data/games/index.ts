@@ -8,6 +8,7 @@ import chartPicker from './chartPicker.game'
 import correlationCausation from './correlationCausation.game'
 import dataDetective from './dataDetective.game'
 import flowTracer from './flowTracer.game'
+import loopRunner from './loopRunner.game'
 import pandasPredict from './pandasPredict.game'
 import operatorChallenge from './operatorChallenge.game'
 import pathFinder from './pathFinder.game'
@@ -24,6 +25,7 @@ export const games: GameDefinition[] = [
   trueOrFalse,
   pathFinder,
   flowTracer,
+  loopRunner,
   caseMatch,
   statsIntuition,
   correlationCausation,

@@ -16,7 +16,7 @@ const chartPicker: GameDefinition = {
   icon: 'chart-bar',
   color: '#C2410C',
   track: 'data-science',
-  day: 9,
+  day: 12,
   secondsPerQuestion: 12,
   questionsPerRound: 10,
   bank: [

@@ -4,7 +4,7 @@ import { py } from '../py'
 const day10: Lesson = {
   id: 'ds-10',
   track: 'data-science',
-  day: 10,
+  day: 13,
   title: 'Project: the café sales report',
   summary:
     'A complete analysis from raw file to recommendations: clean, explore, chart and write the findings.',
@@ -53,7 +53,7 @@ const day10: Lesson = {
         {
           type: 'text',
           body: [
-            'Professional analysts put cleaning in a **function** (Day 5) so the same steps run on every new export. Here it turns the raw file into an analysis-ready table.'
+            'Professional analysts put cleaning in a **function** (Day 8) so the same steps run on every new export. Here it turns the raw file into an analysis-ready table.'
           ]
         },
         {
@@ -179,7 +179,7 @@ print("Top 3 by revenue:", items.nlargest(3, "revenue").index.tolist())
           type: 'callout',
           tone: 'info',
           title: 'Think like an analyst',
-          body: 'A cheap item can sell many units yet bring little revenue; an expensive one can be the opposite. Which ranking matters depends on the decision: shelf space (units) or profit (revenue — or better, profit from Day 8’s merge).'
+          body: 'A cheap item can sell many units yet bring little revenue; an expensive one can be the opposite. Which ranking matters depends on the decision: shelf space (units) or profit (revenue — or better, profit from Day 11’s merge).'
         }
       ]
     },

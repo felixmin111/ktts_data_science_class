@@ -3,7 +3,9 @@ import type {
   CalloutBlock,
   CaseStudyBlock,
   CodeBlock,
+  ChartBlock,
   FlowBlock,
+  LoopBlock,
   LessonSection,
   MemoryBlock,
   QuizBlock,
@@ -30,6 +32,18 @@ export type BlockTranslation =
   | Pick<CaseStudyBlock, 'type' | 'domain' | 'title' | 'problem' | 'data' | 'method' | 'outcome'>
   | (Pick<QuizBlock, 'type' | 'question' | 'explanation'> & Partial<Pick<QuizBlock, 'options'>>)
   | (Pick<FlowBlock, 'type' | 'explanation'> & Partial<Pick<FlowBlock, 'title'>>)
+  | (Pick<LoopBlock, 'type' | 'explanation'> & Partial<Pick<LoopBlock, 'title'>>)
+  | ChartTranslation
+
+type DeepPartial<T> = T extends (infer U)[]
+  ? DeepPartial<U>[]
+  : T extends object
+    ? { [K in keyof T]?: DeepPartial<T[K]> }
+    : T
+
+/** Chart labels merge onto the English chart by key and index, like the rest of the overlay. */
+export type ChartTranslation = Pick<ChartBlock, 'type'> &
+  Partial<Pick<ChartBlock, 'title' | 'caption'>> & { chart?: DeepPartial<ChartBlock['chart']> }
 
 export interface SectionTranslation extends Pick<
   LessonSection,

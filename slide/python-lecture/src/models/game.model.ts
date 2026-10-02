@@ -1,4 +1,5 @@
 import type { TrackId } from './lesson.model'
+import type { LoopProgram } from './loop.model'
 
 /** One step of an if/elif/else flowchart. */
 export type FlowNode =
@@ -32,6 +33,8 @@ export interface GameQuestion {
   explanation: string
   /** Flowchart questions: the player clicks the block that runs instead of picking an option. */
   flow?: FlowPuzzle
+  /** Loop questions: an animated loop diagram is shown with the options and runs after answering. */
+  loop?: LoopProgram
 }
 
 export interface GameDefinition {
@@ -53,6 +56,7 @@ export interface GameDefinition {
     | 'scale-balance'
     | 'source-branch'
     | 'sitemap'
+    | 'refresh'
   color: string
   /** Lesson the game practises (its order inside the track). */
   day: number

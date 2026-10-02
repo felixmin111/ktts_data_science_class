@@ -1,4 +1,6 @@
 import type { FlowNode } from './game.model'
+import type { LoopProgram } from './loop.model'
+import type { ChartSpec } from './chart.model'
 
 export interface TextBlock {
   type: 'text'
@@ -74,6 +76,29 @@ export interface FlowBlock {
   /** Shown after the path has played. */
   explanation: string
   demo?: boolean
+  /** Hide the "same flowchart as Python" code (for flowcharts that are not programs). */
+  hideCode?: boolean
+}
+
+/**
+ * An animated loop diagram with live variables and output. A demo plays on request; a trace
+ * exercise stops at every check and asks the learner whether it is True or False.
+ */
+export interface LoopBlock {
+  type: 'loop'
+  title?: string
+  program: LoopProgram
+  /** Shown once the run has finished. */
+  explanation: string
+  mode: 'demo' | 'trace'
+}
+
+/** A chart drawn on the page, with an optional title and explanation underneath. */
+export interface ChartBlock {
+  type: 'chart'
+  title?: string
+  chart: ChartSpec
+  caption?: string
 }
 
 export interface MemoryBlock {
@@ -90,6 +115,8 @@ export type LessonBlock =
   | CaseStudyBlock
   | QuizBlock
   | FlowBlock
+  | LoopBlock
+  | ChartBlock
 
 export interface LessonSection {
   id: string

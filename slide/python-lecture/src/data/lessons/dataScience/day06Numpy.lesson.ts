@@ -4,7 +4,7 @@ import { py } from '../py'
 const day6: Lesson = {
   id: 'ds-6',
   track: 'data-science',
-  day: 6,
+  day: 9,
   title: 'NumPy: thinking in whole arrays',
   summary:
     'Vectorized maths, boolean masks, 2-D arrays, axes and broadcasting — the engine underneath pandas.',

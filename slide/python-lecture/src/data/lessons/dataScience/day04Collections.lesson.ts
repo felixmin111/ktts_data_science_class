@@ -4,7 +4,7 @@ import { py } from '../py'
 const day4: Lesson = {
   id: 'ds-4',
   track: 'data-science',
-  day: 4,
+  day: 7,
   title: 'Collections: where data lives',
   summary:
     'The four containers every dataset starts in — list, dict, tuple and set — and why choosing the right one matters.',
@@ -193,7 +193,7 @@ print("Revenue of order 1:", first["quantity"] * first["unit_price"])
         {
           type: 'table',
           codeColumns: [1, 2],
-          columns: ['Python', 'Spreadsheet word', 'pandas word (Day 7)'],
+          columns: ['Python', 'Spreadsheet word', 'pandas word (Day 10)'],
           rows: [
             ['The whole list', 'orders', 'DataFrame'],
             ['One dict', 'orders[0]', 'a row'],
@@ -208,7 +208,7 @@ print("Revenue of order 1:", first["quantity"] * first["unit_price"])
         }
       ],
       notes:
-        'To total ALL orders we need a loop — that is exactly the motivation for Day 5. Ask her: how would you add up revenue for 240 orders? (Let her feel the need for loops.)'
+        'To total ALL orders we need a loop — that is exactly the motivation for Day 8. Ask her: how would you add up revenue for 240 orders? (Let her feel the need for loops.)'
     },
     {
       id: 'tuples-sets',

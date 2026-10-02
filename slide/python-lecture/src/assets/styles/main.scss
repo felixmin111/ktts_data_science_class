@@ -33,6 +33,8 @@ code,
 pre,
 kbd {
   font-family: $font-mono;
+  // Show <=, >=, != and == exactly as students type them, not as ligature symbols.
+  font-variant-ligatures: none;
 }
 
 :not(pre) > code {

@@ -49,5 +49,8 @@
     "variables": "Variable များ",
     "asCode": "ဒီ flowchart ကို Python နဲ့ ရေးရင်",
     "chartLabel": "Flowchart: run မယ့် block ကို နှိပ်ပါ"
+  },
+  "loop": {
+    "skip": "Animation ကို ကျော်မည်"
   }
 }
