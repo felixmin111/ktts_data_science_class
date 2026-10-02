@@ -38,8 +38,6 @@ __screenshots__/
 # Vite
 *.timestamp-*-*.mjs
 
-package-lock.json
-
 # Auto Generated & Custom Types
 /typings/auto-imports.d.ts
 /typings/components.d.ts
