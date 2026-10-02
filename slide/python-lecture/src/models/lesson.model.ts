@@ -1,3 +1,5 @@
+import type { FlowNode } from './game.model'
+
 export interface TextBlock {
   type: 'text'
   /** Paragraphs. Inline `code` in backticks and **bold** are supported. */
@@ -60,6 +62,20 @@ export interface QuizBlock {
   explanation: string
 }
 
+/**
+ * An interactive if/elif/else flowchart. As an exercise the learner clicks the block that runs and
+ * watches the path animate; as a demo a "Show the path" button plays the animation.
+ */
+export interface FlowBlock {
+  type: 'flow'
+  title?: string
+  setup: string
+  tree: FlowNode
+  /** Shown after the path has played. */
+  explanation: string
+  demo?: boolean
+}
+
 export interface MemoryBlock {
   type: 'memory'
 }
@@ -73,6 +89,7 @@ export type LessonBlock =
   | CalloutBlock
   | CaseStudyBlock
   | QuizBlock
+  | FlowBlock
 
 export interface LessonSection {
   id: string

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { SKIP_LABEL } from '@/functions/flow.function'
 import { rankFor } from '@/functions/game.function'
 import type { GameDefinition } from '@/models/game.model'
 import Routes from '@/router/uri.route'
@@ -28,13 +29,28 @@ const best = computed(() => useScoreStore().bestFor(props.game.id))
 const rank = computed(() => rankFor(correctCount.value / Math.max(1, questions.value.length)))
 const isLast = computed(() => index.value + 1 >= questions.value.length)
 
+/** Flowchart questions hold back the feedback until the path animation has finished. */
+const flowDone = ref(false)
+watch(index, () => (flowDone.value = false))
+const feedbackReady = computed(() => !current.value?.flow || flowDone.value)
+const feedbackEl = useTemplateRef<HTMLElement>('feedback')
+watch(flowDone, async (done) => {
+  if (!done) return
+  await nextTick()
+  feedbackEl.value?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+})
+
+function optionText(option: string | undefined) {
+  return option === SKIP_LABEL ? t('game.flow.nothing') : option
+}
+
 onKeyStroke((event) => {
   if (phase.value === 'playing') {
     const choice = Number(event.key) - 1
     if (current.value && choice >= 0 && choice < current.value.options.length) {
       engine.answer(choice)
     }
-  } else if (phase.value === 'feedback' && event.key === 'Enter') {
+  } else if (phase.value === 'feedback' && feedbackReady.value && event.key === 'Enter') {
     engine.next()
   }
 })
@@ -89,9 +105,21 @@ function optionState(optionIndex: number) {
       </div>
 
       <p class="game__prompt">{{ current.prompt }}</p>
-      <CodeRunner v-if="current.code" :key="index" :code="current.code" />
 
-      <div class="game__options">
+      <FlowBoard
+        v-if="current.flow"
+        :key="`flow-${index}`"
+        :puzzle="current.flow"
+        :options="current.options"
+        :answer="current.answer"
+        :chosen="lastAnswer?.questionIndex === index ? lastAnswer.chosen : undefined"
+        :revealed="phase === 'feedback'"
+        @choose="engine.answer($event)"
+        @done="flowDone = true"
+      />
+      <CodeRunner v-else-if="current.code" :key="index" :code="current.code" />
+
+      <div v-if="!current.flow" class="game__options">
         <button
           v-for="(option, optionIndex) in current.options"
           :key="option"
@@ -106,7 +134,11 @@ function optionState(optionIndex: number) {
         </button>
       </div>
 
-      <div v-if="phase === 'feedback' && lastAnswer" class="game__feedback">
+      <div
+        v-if="phase === 'feedback' && lastAnswer && feedbackReady"
+        ref="feedback"
+        class="game__feedback"
+      >
         <div>
           <p
             class="game__verdict"
@@ -124,6 +156,12 @@ function optionState(optionIndex: number) {
           {{ isLast ? t('game.seeResults') : t('game.next') }}
         </a-button>
       </div>
+      <CodeRunner
+        v-if="current.flow && phase === 'feedback' && feedbackReady && current.code"
+        :key="`code-${index}`"
+        :code="current.code"
+        :title="t('game.flow.asCode')"
+      />
     </section>
 
     <!-- Results -->
@@ -167,10 +205,11 @@ function optionState(optionIndex: number) {
           <span class="game__review-answer">
             {{
               t('game.answerWas', {
-                answer:
+                answer: optionText(
                   questions[record.questionIndex]?.options[
                     questions[record.questionIndex]?.answer ?? 0
                   ]
+                )
               })
             }}
           </span>

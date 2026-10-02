@@ -3,6 +3,7 @@ import type {
   CalloutBlock,
   CaseStudyBlock,
   CodeBlock,
+  FlowBlock,
   LessonSection,
   MemoryBlock,
   QuizBlock,
@@ -28,6 +29,7 @@ export type BlockTranslation =
   | Pick<CalloutBlock, 'type' | 'title' | 'body'>
   | Pick<CaseStudyBlock, 'type' | 'domain' | 'title' | 'problem' | 'data' | 'method' | 'outcome'>
   | (Pick<QuizBlock, 'type' | 'question' | 'explanation'> & Partial<Pick<QuizBlock, 'options'>>)
+  | (Pick<FlowBlock, 'type' | 'explanation'> & Partial<Pick<FlowBlock, 'title'>>)
 
 export interface SectionTranslation extends Pick<
   LessonSection,

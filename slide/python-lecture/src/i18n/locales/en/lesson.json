@@ -17,5 +17,13 @@
     "hint": "Try the exercise yourself first, then check your answer.",
     "show": "Show solution",
     "hide": "Hide solution"
+  },
+  "flow": {
+    "exercise": "Flow Tracer exercise",
+    "demo": "Flowchart",
+    "hint": "Which block runs? Click it, then watch the path.",
+    "demoHint": "Read the chart, guess the path, then press the button to check.",
+    "play": "Show the path",
+    "replay": "Play again"
   }
 }

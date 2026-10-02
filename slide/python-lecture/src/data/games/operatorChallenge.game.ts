@@ -190,7 +190,8 @@ const operatorChallenge: GameDefinition = {
       code: 'score = 85\nif score >= 50:\n    print("pass")\nelif score >= 80:\n    print("great")\nelse:\n    print("fail")',
       options: ['pass', 'great', 'pass\ngreat', 'fail'],
       answer: 0,
-      explanation: 'Python takes the first True branch and skips the rest. Put the strictest check first.'
+      explanation:
+        'Python takes the first True branch and skips the rest. Put the strictest check first.'
     },
     {
       prompt: 'What is printed?',

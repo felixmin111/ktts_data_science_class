@@ -7,8 +7,10 @@ import caseMatch from './caseMatch.game'
 import chartPicker from './chartPicker.game'
 import correlationCausation from './correlationCausation.game'
 import dataDetective from './dataDetective.game'
+import flowTracer from './flowTracer.game'
 import pandasPredict from './pandasPredict.game'
 import operatorChallenge from './operatorChallenge.game'
+import pathFinder from './pathFinder.game'
 import predictOutput from './predictOutput.game'
 import statsIntuition from './statsIntuition.game'
 import trueOrFalse from './trueOrFalse.game'
@@ -20,6 +22,8 @@ export const games: GameDefinition[] = [
   bugHunter,
   operatorChallenge,
   trueOrFalse,
+  pathFinder,
+  flowTracer,
   caseMatch,
   statsIntuition,
   correlationCausation,

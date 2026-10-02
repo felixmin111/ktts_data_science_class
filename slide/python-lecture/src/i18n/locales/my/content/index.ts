@@ -16,6 +16,8 @@ import predictOutput from './games/predictOutput.game'
 import bugHunter from './games/bugHunter.game'
 import operatorChallenge from './games/operatorChallenge.game'
 import trueOrFalse from './games/trueOrFalse.game'
+import pathFinder from './games/pathFinder.game'
+import flowTracer from './games/flowTracer.game'
 import caseMatch from './games/caseMatch.game'
 import statsIntuition from './games/statsIntuition.game'
 import correlationCausation from './games/correlationCausation.game'
@@ -58,6 +60,8 @@ const myanmar: ContentTranslation = {
     'bug-hunter': bugHunter,
     'operator-challenge': operatorChallenge,
     'true-or-false': trueOrFalse,
+    'path-finder': pathFinder,
+    'flow-tracer': flowTracer,
     'case-match': caseMatch,
     'stats-intuition': statsIntuition,
     'correlation-causation': correlationCausation,

@@ -42,5 +42,12 @@
       "message": "Every expert started here. Read the explanations and try again."
     }
   },
-  "saveFailed": "This round could not be saved to your account. Check your connection."
+  "saveFailed": "This round could not be saved to your account. Check your connection.",
+  "flow": {
+    "start": "Start",
+    "nothing": "(nothing runs)",
+    "variables": "Variables",
+    "asCode": "The same flowchart as Python",
+    "chartLabel": "Flowchart: click the block that runs"
+  }
 }

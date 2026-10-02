@@ -487,17 +487,90 @@ const day2: LessonTranslation = {
       ]
     },
     {
+      id: 'if-basic',
+      eyebrow: 'ဆုံးဖြတ်ချက်များ · ၁/၄',
+      title: 'if: အဖြေ True ဖြစ်မှသာ block ကို run ခြင်း',
+      blocks: [
+        {
+          type: 'text',
+          body: [
+            'အခုထိ စာကြောင်းတိုင်းကို အပေါ်ကနေ အောက် run ခဲ့တယ်။ `if` နဲ့ဆိုရင် program က **ဆုံးဖြတ်** နိုင်တယ်: condition True ဖြစ်မှသာ စာကြောင်းအချို့ကို run တယ်။ ဆုံးဖြတ်ချက် ပုံစံ လေးမျိုး ရှိတယ်၊ slide တစ်ခုစီမှာ တစ်မျိုး: **if**၊ **if / else**၊ **if / elif / else** နဲ့ **nested if**။',
+            '**`if` ရဲ့ အစိတ်အပိုင်းများ:** ① keyword `if` ② condition: True သို့မဟုတ် False ပေးတဲ့ ဘာမဆို (`temp > 30`၊ `name == ""`၊ `is_raining`) ③ colon `:` ④ **block**: အောက်က **space 4 ခု** indent လုပ်ထားတဲ့ စာကြောင်းများ။',
+            '**ဘာဖြစ်လဲ:** condition True ဆိုရင် Python က block ကို run တယ်။ False ဆိုရင် block ကို **ကျော်** တယ်။ ဘယ်လိုပဲဖြစ်ဖြစ် ပြီးရင် indent မလုပ်ထားတဲ့ ပထမ စာကြောင်းကနေ ဆက် run တယ်။'
+          ]
+        },
+        { type: 'code' },
+        {
+          type: 'flow',
+          explanation:
+            '35 > 30 က True မို့ လမ်းကြောင်းက block ထဲ ဝင်တယ်။ temp = 20 ဆိုရင် False မြှားကို ယူပြီး block ကို ကျော်တော့ ဘာမှ မ run ဘူး။'
+        },
+        {
+          type: 'callout',
+          title: 'ဖြစ်လေ့ရှိတဲ့ အမှား သုံးခု',
+          body: '① Colon မေ့တာ: `if temp > 30` → SyntaxError။ ② Block ကို indent မလုပ်တာ → IndentationError။ ③ `==` အစား `=` ရေးတာ: `if age = 18:` → SyntaxError။'
+        },
+        { type: 'flow', explanation: '40 < 50 က True မို့ သတိပေးချက် print ထွက်တယ်။' },
+        {
+          type: 'flow',
+          explanation: '80 < 20 က False ပြီး else မရှိတော့ ဘာမှ မ run ဘူး: program က ဆက်သွားရုံပဲ။'
+        }
+      ]
+    },
+    {
+      id: 'if-else',
+      eyebrow: 'ဆုံးဖြတ်ချက်များ · ၂/၄',
+      title: 'if / else: လမ်းနှစ်ခုထဲက တစ်ခု အမြဲ',
+      blocks: [
+        {
+          type: 'text',
+          body: [
+            '`else` က condition False ဖြစ်တဲ့အခါအတွက် ဒုတိယ လမ်းကြောင်း ထပ်ထည့်တယ်။ အခု block နှစ်ခုထဲက **တစ်ခုတည်း** run တယ်: နှစ်ခုလုံး ဘယ်တော့မှ မ run ဘူး၊ တစ်ခုမှ မ run တာလည်း မဖြစ်ဘူး။',
+            '`else` မှာ ကိုယ်ပိုင် **condition မရှိဘူး**၊ “မဟုတ်ရင်” လို့ပဲ ဆိုလိုတယ်။ သူ့ `if` နဲ့ indent တူတူ ထားပြီး colon နဲ့ ဆုံးတယ်: `else:`။'
+          ]
+        },
+        { type: 'code' },
+        {
+          type: 'flow',
+          explanation:
+            '16 >= 18 က False မို့ လမ်းကြောင်းက False မြှားအတိုင်း else block ဆီ သွားတယ်။'
+        },
+        {
+          type: 'analogy',
+          title: 'လမ်းခွ',
+          body: 'လမ်းခွမှာ ဘယ် ဒါမှမဟုတ် ညာ သွားရမယ် — နှစ်ဘက်လုံး မသွားနိုင်ဘူး၊ ရပ်နေလို့လည်း မရဘူး။ if / else က လမ်းခွပါ: condition က ဘယ်ဘက်လဲ ရွေးတယ်။'
+        },
+        {
+          type: 'flow',
+          explanation: '7 % 2 က 1 မို့ n % 2 == 0 က False: else block က "odd" ကို print ထုတ်တယ်။'
+        },
+        { type: 'flow', explanation: 'String နှစ်ခု အတိအကျ တူတော့ condition က True။' },
+        {
+          type: 'quiz',
+          question: 'ဒါက ဘာကို print ထုတ်မလဲ?',
+          explanation:
+            'Block နှစ်ခုထဲက တစ်ခုတည်း ("big") run တယ်၊ ပြီးမှ indent မလုပ်ထားတဲ့ print("end") က အမြဲ run တယ်။'
+        }
+      ]
+    },
+    {
       id: 'if-elif',
-      eyebrow: 'ဆုံးဖြတ်ချက်များ',
-      title: 'if / elif / else: အဖြေအပေါ် မူတည်ပြီး လုပ်ဆောင်ခြင်း',
+      eyebrow: 'ဆုံးဖြတ်ချက်များ · ၃/၄',
+      title: 'if / elif / else: ရွေးချယ်စရာ လှေကား',
       blocks: [
         { type: 'code' },
         {
           type: 'text',
           body: [
+            '`elif` ဆိုတာ “else if”။ လမ်းကြောင်း **နှစ်ခုထက် ပိုရင်** ထပ်လိုတဲ့ condition တစ်ခုစီအတွက် `elif` တစ်ခု ထည့်ပါ။ `elif` ကို လိုသလောက် ထည့်လို့ရပြီး နောက်ဆုံး `else` က မထည့်လည်း ရတယ်။',
             'Python က condition တွေကို **အပေါ်ကနေ အောက်** စစ်ပြီး condition True ဖြစ်တဲ့ **ပထမဆုံး** block ကိုပဲ run တယ်၊ ကျန်တာတွေကို ကျော်သွားတယ်။ `else` က ကျန်တာအားလုံးကို ဖမ်းတယ်။',
             'Colon `:` က block တစ်ခု ဖွင့်တယ်၊ **space 4 ခု indent** က ဘယ်စာကြောင်းတွေ အဲဒီ block ထဲ ပါလဲ ပြတယ်။ `print("Done")` က indent မလုပ်ထားလို့ အမြဲ run တယ်။'
           ]
+        },
+        {
+          type: 'flow',
+          explanation:
+            '65 >= 80 က False မို့ ညာဘက် နောက်စစ်ချက်ဆီ ရွှေ့။ 65 >= 60 က True: "Grade B"။ နောက်ဆုံး စစ်ချက်နဲ့ else ကို ဘယ်တော့မှ မစစ်ဘူး။'
         },
         {
           type: 'analogy',
@@ -510,10 +583,78 @@ const day2: LessonTranslation = {
           options: ['A', 'B', 'A ရော B ရော', 'ဘာမှ မထုတ်ဘူး'],
           explanation:
             '95 >= 60 က True ဖြစ်ပြီးသားမို့ ပထမ block run ပြီး elif ကို ကျော်သွားတယ်။ အတင်းကျပ်ဆုံး condition ကို အရင် ထားပါ။'
-        }
+        },
+        {
+          type: 'flow',
+          explanation:
+            'အစီအစဉ် ထောင်ချောက်: 95 >= 50 က ပထမဆုံး အဆင့်မှာတင် True မို့ "excellent" ကို ဘယ်တော့မှ မရောက်နိုင်ဘူး။ score >= 90 ကို အရင်ထားပါ။'
+        },
+        {
+          type: 'flow',
+          explanation:
+            '25 > 30 က False၊ 25 > 20 က True: "warm"။ 25 > 10 ကလည်း True ပေမဲ့ Python က အဲဒီမှာ ရပ်တယ်။'
+        },
+        {
+          type: 'text',
+          body: [
+            '**Chain တစ်ခု vs သီးခြား if များ:** `if … elif … else` က branch **တစ်ခုထက် မပို** ရွေးတယ်။ သီးခြား `if` နှစ်ခုကတော့ တစ်ခုချင်း သီးသန့် စစ်တော့ နှစ်ခုလုံး run နိုင်တယ်။'
+          ]
+        },
+        { type: 'code', title: 'Chain တစ်ခု vs သီးခြား if များ' }
       ],
       notes:
-        'Input box မှာ 85၊ 40 နဲ့ 10 ကို စမ်းကြည့်ပါ။ ပြီးရင် condition တွေရဲ့ အစီအစဉ်ကို ပြောင်းခိုင်းပြီး ဘာပျက်သွားလဲ ကျောင်းသားကို ရှင်းပြခိုင်းပါ။ နောက်ဆုံးမှာ Games စာမျက်နှာက Operator စိန်ခေါ်မှု နဲ့ True လား False လား? ဂိမ်းတွေကို ကစားပါ — ၆ မိနစ်လောက် ကြာတယ်။'
+        'Input box မှာ 85၊ 40 နဲ့ 10 ကို စမ်းကြည့်ပါ။ ပြီးရင် condition တွေရဲ့ အစီအစဉ်ကို ပြောင်းခိုင်းပြီး ဘာပျက်သွားလဲ ကျောင်းသားကို ရှင်းပြခိုင်းပါ။'
+    },
+    {
+      id: 'if-nested',
+      eyebrow: 'ဆုံးဖြတ်ချက်များ · ၄/၄',
+      title: 'Nested if: ဆုံးဖြတ်ချက်ထဲက ဆုံးဖြတ်ချက်',
+      blocks: [
+        {
+          type: 'text',
+          body: [
+            '**Nested if:** `if` တစ်ခုကို နောက် `if` တစ်ခုရဲ့ **အထဲမှာ** indent တစ်ဆင့် ထပ်တိုးပြီး ထည့်လို့ရတယ်။ အပြင် စစ်ချက် True ဖြစ်မှသာ အတွင်း စစ်ချက်ကို စစ်တယ်။',
+            '**လမ်းကြောင်းကို ခြေရာခံနည်း:** ① အပြင် condition ကို စစ် ② True ဆိုရင် အထဲဝင်ပြီး အတွင်း condition တွေကို အပေါ်ကနေ အောက် အတူတူ စစ် ③ False ဆိုရင် indent လုပ်ထားတဲ့ block **တစ်ခုလုံး** (အတွင်း `if` တွေ အားလုံးအပါ) ကို ကျော်ပြီး အပြင် `elif`/`else` ဆီ သွား ④ indent ပြန်ငယ်သွားတဲ့ စာကြောင်းက block ရဲ့ အပြင်မှာ ရှိလို့ နောက်မှာ အမြဲ run တယ်။'
+          ]
+        },
+        { type: 'code', title: 'Nested if: စစ်ချက် နှစ်ဆင့်ရှိတဲ့ တံခါး' },
+        {
+          type: 'flow',
+          explanation:
+            'အပြင်: 20 >= 18 က True မို့ အထဲဝင်။ အတွင်း: has_id က False မို့ အတွင်း else run တယ်။'
+        },
+        {
+          type: 'quiz',
+          question: 'ဘယ်လမ်းကြောင်းကို ရောက်မလဲ? ဒါက ဘာကို print ထုတ်မလဲ?',
+          explanation:
+            'အပြင်: 28 > 25 က True မို့ အထဲဝင်။ အတွင်း: raining က True မို့ "umbrella"။ အပြင် else ကို ကျော်တယ်။'
+        },
+        {
+          type: 'quiz',
+          question: 'ဒါက ဘာကို print ထုတ်မလဲ?',
+          options: ['B\nC', 'A\nB\nC', 'C', 'ဘာမှ print မထွက်ဘူး'],
+          explanation:
+            '3 > 5 က False မို့ indent လုပ်ထားတဲ့ block တစ်ခုလုံးကို ကျော်တယ်။ x > 1 က True ဖြစ်မှာပေမဲ့ Python က အထဲကို ဝင်မစစ်ဘူး။ indent မလုပ်ထားတဲ့ C တစ်ခုပဲ run တယ်။'
+        },
+        {
+          type: 'flow',
+          explanation:
+            'အပြင် စစ်ချက် False မို့ has_id က True ဖြစ်ပေမဲ့ အတွင်း if တစ်ခုလုံးကို ကျော်တယ်။'
+        },
+        {
+          type: 'flow',
+          explanation:
+            '12 % 2 က 0 မို့ True ဘက် ဝင်။ အဲဒီမှာ 12 % 3 ကလည်း 0: "even, /3"။ ညာဘက်ကို ဘယ်တော့မှ မစစ်ဘူး။'
+        },
+        {
+          type: 'code',
+          title:
+            'လေ့ကျင့်ခန်း: ရုပ်ရှင်လက်မှတ် ဈေး (comment ထဲက စည်းမျဉ်းအတိုင်း if / elif / else ရေးပါ)'
+        },
+        { type: 'code', title: 'ဖြေနည်း တစ်ခု' }
+      ],
+      notes:
+        'Games စာမျက်နှာက Flow ခြေရာခံ ဂိမ်းကို projector ပေါ်မှာ အရင်ပြပါ: မနှိပ်ခင် ဘယ် block run မလဲ ကျောင်းသားတွေကို အော်ဖြေခိုင်းပြီး လမ်းကြောင်း animation ကို အတူတူ ကြည့်ပါ။ ပြီးရင် Operator စိန်ခေါ်မှု၊ True လား False လား? နဲ့ လမ်းကြောင်း ရှာဖွေသူ ဂိမ်းတွေကို ကစားပါ — ၁၅ မိနစ်လောက် ကြာတယ်။'
     },
     {
       id: 'project',

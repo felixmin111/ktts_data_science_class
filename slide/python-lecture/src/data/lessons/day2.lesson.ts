@@ -1,4 +1,5 @@
 import type { Lesson } from '@/models/lesson.model'
+import { action, decision, skip } from '@/functions/flow.function'
 
 const day2: Lesson = {
   id: 'day-2',
@@ -683,10 +684,123 @@ const day2: Lesson = {
       ]
     },
     {
+      id: 'if-basic',
+      eyebrow: 'Decisions · 1 of 4',
+      title: 'if: run a block only when the answer is True',
+      minutes: 6,
+      blocks: [
+        {
+          type: 'text',
+          body: [
+            'So far every line ran, top to bottom. With `if`, a program can **decide**: run some lines only when a condition is True. There are four shapes of decision, one per slide: **if**, **if / else**, **if / elif / else** and **nested if**.',
+            '**The parts of an `if`:** ① the keyword `if` ② a condition: anything that gives True or False (`temp > 30`, `name == ""`, `is_raining`) ③ a colon `:` ④ the **block**: the lines below, indented by **4 spaces**.',
+            '**What happens:** if the condition is True, Python runs the block. If it is False, Python **skips** the block. Either way, it then carries on with the first line that is not indented.'
+          ]
+        },
+        {
+          type: 'code',
+          runnable: true,
+          code: 'temp = 35\n\nif temp > 30:\n    print("It is hot! Drink water.")\n\nprint("Have a nice day")',
+          output: 'It is hot! Drink water.\nHave a nice day'
+        },
+        {
+          type: 'flow',
+          demo: true,
+          setup: 'temp = 35',
+          tree: decision('temp > 30', true, action('print("It is hot! Drink water.")'), skip),
+          explanation:
+            '35 > 30 is True, so the path goes into the block. With temp = 20 it would take the False arrow, skip the block and run nothing.'
+        },
+        {
+          type: 'callout',
+          tone: 'warning',
+          title: 'Three common mistakes',
+          body: '① Forgetting the colon: `if temp > 30` → SyntaxError. ② Forgetting to indent the block → IndentationError. ③ Writing `=` instead of `==`: `if age = 18:` → SyntaxError.'
+        },
+        {
+          type: 'flow',
+          setup: 'balance = 40',
+          tree: decision('balance < 50', true, action('print("Low balance!")'), skip),
+          explanation: '40 < 50 is True, so the warning prints.'
+        },
+        {
+          type: 'flow',
+          setup: 'battery = 80',
+          tree: decision('battery < 20', false, action('print("Charge your phone")'), skip),
+          explanation:
+            '80 < 20 is False and there is no else, so nothing runs: the program just carries on.'
+        }
+      ]
+    },
+    {
+      id: 'if-else',
+      eyebrow: 'Decisions · 2 of 4',
+      title: 'if / else: always one of two paths',
+      minutes: 6,
+      blocks: [
+        {
+          type: 'text',
+          body: [
+            '`else` adds a second path for when the condition is False. Now **exactly one** of the two blocks runs: never both, never neither.',
+            '`else` has **no condition** of its own; it just means “otherwise”. It sits at the same indent as its `if` and ends with a colon: `else:`.'
+          ]
+        },
+        {
+          type: 'code',
+          runnable: true,
+          code: 'age = 16\n\nif age >= 18:\n    print("You can vote")\nelse:\n    print("Too young to vote")',
+          output: 'Too young to vote'
+        },
+        {
+          type: 'flow',
+          demo: true,
+          setup: 'age = 16',
+          tree: decision(
+            'age >= 18',
+            false,
+            action('print("You can vote")'),
+            action('print("Too young to vote")')
+          ),
+          explanation: '16 >= 18 is False, so the path takes the False arrow to the else block.'
+        },
+        {
+          type: 'analogy',
+          title: 'A fork in the road',
+          body: 'At a fork you must go left or right — you cannot take both, and you cannot stand still. if / else is a fork: the condition picks the side.'
+        },
+        {
+          type: 'flow',
+          setup: 'n = 7',
+          tree: decision('n % 2 == 0', false, action('print("even")'), action('print("odd")')),
+          explanation: '7 % 2 is 1, so n % 2 == 0 is False: the else block prints "odd".'
+        },
+        {
+          type: 'flow',
+          setup: 'password = "python"',
+          tree: decision(
+            'password == "python"',
+            true,
+            action('print("Welcome!")'),
+            action('print("Wrong password")')
+          ),
+          explanation: 'The two strings are exactly equal, so the condition is True.'
+        },
+        {
+          type: 'quiz',
+          question: 'What does this print?',
+          code: 'x = 10\nif x > 5:\n    print("big")\nelse:\n    print("small")\nprint("end")',
+          options: ['big\nend', 'small\nend', 'big\nsmall\nend', 'end'],
+          answer: 0,
+          explanation:
+            'Exactly one of the two blocks runs ("big"), then the un-indented print("end") always runs.'
+        }
+      ]
+    },
+    {
       id: 'if-elif',
-      eyebrow: 'Decisions',
-      title: 'if / elif / else: acting on the answer',
-      minutes: 5,
+      eyebrow: 'Decisions · 3 of 4',
+      title: 'if / elif / else: a ladder of choices',
+      minutes: 8,
       blocks: [
         {
           type: 'code',
@@ -697,9 +811,33 @@ const day2: Lesson = {
         {
           type: 'text',
           body: [
+            '`elif` means “else if”. When there are **more than two** paths, add one `elif` per extra condition. You can have as many `elif`s as you need, and the final `else` is optional.',
             'Python checks the conditions **top to bottom** and runs only the **first** block whose condition is True; the rest are skipped. `else` catches everything left.',
             'The colon `:` opens a block, and the **4-space indent** shows which lines belong to it. `print("Done")` is not indented, so it always runs.'
           ]
+        },
+        {
+          type: 'flow',
+          demo: true,
+          setup: 'score = 65',
+          tree: decision(
+            'score >= 80',
+            false,
+            action('print("Grade A")'),
+            decision(
+              'score >= 60',
+              true,
+              action('print("Grade B")'),
+              decision(
+                'score >= 40',
+                null,
+                action('print("Grade C")'),
+                action('print("Try again")')
+              )
+            )
+          ),
+          explanation:
+            '65 >= 80 is False, so step right to the next test. 65 >= 60 is True: "Grade B". The last test and the else are never checked.'
         },
         {
           type: 'analogy',
@@ -714,10 +852,155 @@ const day2: Lesson = {
           answer: 1,
           explanation:
             '95 >= 60 is already True, so the first block runs and the elif is skipped. Put the strictest condition first.'
+        },
+        {
+          type: 'flow',
+          setup: 'score = 95',
+          tree: decision(
+            'score >= 50',
+            true,
+            action('print("pass")'),
+            decision('score >= 90', null, action('print("excellent")'), action('print("fail")'))
+          ),
+          explanation:
+            'Order trap: 95 >= 50 is True at the very first step, so "excellent" can never be reached. Put score >= 90 first.'
+        },
+        {
+          type: 'flow',
+          setup: 'temp = 25',
+          tree: decision(
+            'temp > 30',
+            false,
+            action('print("hot")'),
+            decision(
+              'temp > 20',
+              true,
+              action('print("warm")'),
+              decision('temp > 10', null, action('print("cool")'), action('print("cold")'))
+            )
+          ),
+          explanation:
+            '25 > 30 is False, 25 > 20 is True: "warm". Python stops there, even though 25 > 10 is also True.'
+        },
+        {
+          type: 'text',
+          body: [
+            '**One chain vs separate ifs:** `if … elif … else` picks **at most one** branch. Two separate `if` statements are checked independently, so both can run.'
+          ]
+        },
+        {
+          type: 'code',
+          runnable: true,
+          title: 'One chain vs separate ifs',
+          code: 'x = 15\n\n# One chain: only the FIRST True branch runs\nif x > 10:\n    print("chain: big")\nelif x > 5:\n    print("chain: medium")\n\n# Two separate ifs: each one is checked on its own\nif x > 10:\n    print("separate: big")\nif x > 5:\n    print("separate: medium")',
+          output: 'chain: big\nseparate: big\nseparate: medium'
         }
       ],
       notes:
-        'Try 85, 40 and 10 in the Input box. Then ask the student to swap the order of the conditions and explain what breaks. Finish with the Operator Challenge and True or False? games from the Games page — about 6 minutes.'
+        'Try 85, 40 and 10 in the Input box. Then ask the student to swap the order of the conditions and explain what breaks.'
+    },
+    {
+      id: 'if-nested',
+      eyebrow: 'Decisions · 4 of 4',
+      title: 'Nested if: a decision inside a decision',
+      minutes: 10,
+      blocks: [
+        {
+          type: 'text',
+          body: [
+            '**Nested if:** an `if` can sit **inside** another `if`, indented one more level. The inner test is only checked when the outer test is True.',
+            '**How to trace the path:** ① check the outer condition ② if it is True, step inside and check the inner conditions the same way, top to bottom ③ if it is False, skip the **whole** indented block, every inner `if` included, and go to the outer `elif`/`else` ④ a line that goes back to a smaller indent is outside the block, so it always runs afterwards.'
+          ]
+        },
+        {
+          type: 'code',
+          runnable: true,
+          title: 'Nested if: a door with two checks',
+          code: 'age = 20\nhas_id = False\n\nif age >= 18:\n    print("Checking ID...")\n    if has_id:\n        print("Welcome in")\n    else:\n        print("Please show your ID")\nelse:\n    print("Sorry, too young")\n\nprint("Next person")',
+          output: 'Checking ID...\nPlease show your ID\nNext person'
+        },
+        {
+          type: 'flow',
+          demo: true,
+          setup: 'age = 20\nhas_id = False',
+          tree: decision(
+            'age >= 18',
+            true,
+            decision(
+              'has_id',
+              false,
+              action('print("Welcome in")'),
+              action('print("Show your ID")')
+            ),
+            action('print("Too young")')
+          ),
+          explanation:
+            'Outer: 20 >= 18 is True, so step inside. Inner: has_id is False, so the inner else runs.'
+        },
+        {
+          type: 'quiz',
+          question: 'Which path is taken? What does this print?',
+          code: 'temp = 28\nraining = True\nif temp > 25:\n    if raining:\n        print("umbrella")\n    else:\n        print("sunscreen")\nelse:\n    print("jacket")',
+          options: ['sunscreen', 'umbrella', 'jacket', 'umbrella\njacket'],
+          answer: 1,
+          explanation:
+            'Outer: 28 > 25 is True, so step inside. Inner: raining is True, so "umbrella". The outer else is skipped.'
+        },
+        {
+          type: 'quiz',
+          question: 'What does this print?',
+          code: 'x = 3\nif x > 5:\n    print("A")\n    if x > 1:\n        print("B")\nprint("C")',
+          options: ['B\nC', 'A\nB\nC', 'C', 'Nothing'],
+          answer: 2,
+          explanation:
+            '3 > 5 is False, so the whole indented block is skipped. x > 1 would be True, but Python never gets inside to check it. Only C, which is not indented, runs.'
+        },
+        {
+          type: 'flow',
+          setup: 'age = 15\nhas_id = True',
+          tree: decision(
+            'age >= 18',
+            false,
+            decision(
+              'has_id',
+              null,
+              action('print("Welcome in")'),
+              action('print("Show your ID")')
+            ),
+            action('print("Too young")')
+          ),
+          explanation:
+            'The outer test is False, so the whole inner if is skipped, even though has_id is True.'
+        },
+        {
+          type: 'flow',
+          setup: 'n = 12',
+          tree: decision(
+            'n % 2 == 0',
+            true,
+            decision('n % 3 == 0', true, action('print("even, /3")'), action('print("even")')),
+            decision('n % 3 == 0', null, action('print("odd, /3")'), action('print("odd")'))
+          ),
+          explanation:
+            '12 % 2 is 0, so step into the True side. There, 12 % 3 is also 0: "even, /3". The right-hand side is never checked.'
+        },
+        {
+          type: 'code',
+          runnable: true,
+          title: 'Exercise: cinema ticket price',
+          code: '# Cinema ticket price. Print the price for this person.\n#   under 12        → 3000\n#   12 to 59        → 5000, but students pay 4000  (nested if!)\n#   60 or older     → 2500\n# Then try age = 8, age = 30 with is_student = False, and age = 65.\nage = 20\nis_student = True\n\n# Your code here'
+        },
+        {
+          type: 'code',
+          runnable: true,
+          hidden: true,
+          title: 'One possible solution',
+          code: 'age = 20\nis_student = True\n\nif age < 12:\n    print(3000)\nelif age < 60:\n    if is_student:      # only checked for ages 12 to 59\n        print(4000)\n    else:\n        print(5000)\nelse:\n    print(2500)',
+          output: '4000'
+        }
+      ],
+      notes:
+        'Show the Flow Tracer game on the projector first: students shout which block runs before you click, then everyone watches the path animate. Finish with the Operator Challenge, True or False? and Path Finder games from the Games page — about 15 minutes.'
     },
     {
       id: 'project',

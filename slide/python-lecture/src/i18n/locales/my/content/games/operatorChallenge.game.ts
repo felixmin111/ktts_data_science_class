@@ -54,7 +54,9 @@ const operatorChallenge: GameTranslation = {
     q('and က or ထက် အရင်: False and False က False၊ ပြီးမှ True or False က True။'),
     q('Comparison ကို အရင် run တယ်: 5 > 3 က True၊ not True က False။'),
     q('နှစ်ဘက်စလုံး True မို့ and က True ပေးတယ်: 15 က ဆယ်ကျော်သက်။'),
-    q('Python က ပထမဆုံး True ဖြစ်တဲ့ branch ကို ယူပြီး ကျန်တာကို ကျော်တယ်။ အတင်းကျပ်ဆုံး စစ်ချက်ကို အရင်ထားပါ။'),
+    q(
+      'Python က ပထမဆုံး True ဖြစ်တဲ့ branch ကို ယူပြီး ကျန်တာကို ကျော်တယ်။ အတင်းကျပ်ဆုံး စစ်ချက်ကို အရင်ထားပါ။'
+    ),
     q('30 > 35 က False၊ 30 > 25 က True မို့ elif branch run တယ်။'),
     q('String အလွတ်က falsy မို့ else branch run တယ်။')
   ]

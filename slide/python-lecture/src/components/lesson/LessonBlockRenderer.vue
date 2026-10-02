@@ -45,6 +45,7 @@ defineProps<{ block: LessonBlock }>()
   />
   <CaseStudyCard v-else-if="block.type === 'case'" :study="block" />
   <QuizCard v-else-if="block.type === 'quiz'" :quiz="block" />
+  <FlowExercise v-else-if="block.type === 'flow'" :block="block" />
 </template>
 
 <style scoped lang="scss">

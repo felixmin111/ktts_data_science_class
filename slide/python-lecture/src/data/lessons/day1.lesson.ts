@@ -393,7 +393,8 @@ const day1: Lesson = {
           code: 's = "Python"\nprint(s[:2] + s[-1])',
           options: ['Pyn', 'Pyt', 'Pn', 'Pyo'],
           answer: 0,
-          explanation: 's[:2] is "Py" (no start means “from the beginning”) and s[-1] is "n": "Py" + "n" = "Pyn".'
+          explanation:
+            's[:2] is "Py" (no start means “from the beginning”) and s[-1] is "n": "Py" + "n" = "Pyn".'
         },
         {
           type: 'quiz',
@@ -410,7 +411,8 @@ const day1: Lesson = {
           code: 's = "Python"\nprint(s[10])',
           options: ['IndexError', 'Nothing is printed', 'n', '""'],
           answer: 0,
-          explanation: '"Python" has indexes 0 to 5 only. Asking for index 10 is out of range: IndexError.'
+          explanation:
+            '"Python" has indexes 0 to 5 only. Asking for index 10 is out of range: IndexError.'
         }
       ]
     },

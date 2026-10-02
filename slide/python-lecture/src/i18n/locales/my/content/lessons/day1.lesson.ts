@@ -312,7 +312,8 @@ const day1: LessonTranslation = {
           type: 'quiz',
           question: 'ဘာဖြစ်မလဲ?',
           options: ['IndexError', 'ဘာမှ print မထွက်ဘူး', 'n', '""'],
-          explanation: '"Python" မှာ index 0 ကနေ 5 ထိပဲ ရှိတယ်။ Index 10 ကို တောင်းရင် အပြင်ရောက်သွားတယ်: IndexError။'
+          explanation:
+            '"Python" မှာ index 0 ကနေ 5 ထိပဲ ရှိတယ်။ Index 10 ကို တောင်းရင် အပြင်ရောက်သွားတယ်: IndexError။'
         }
       ]
     },
