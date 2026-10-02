@@ -38,3 +38,4 @@ build/
 
 ### Local secrets ###
 .env.local
+/local.properties

@@ -5,8 +5,10 @@ Same stack as NGCP `common-backend`: Spring Boot 4, Java 25, Spring Security, JP
 
 ## Run locally
 
-`.env.local` (git-ignored) holds the local settings: DB login, JWT secret, port 8090 and an optional
-first teacher. Then:
+`local.properties` (git-ignored and excluded from Docker builds) holds the local settings: DB login, JWT secret, port 8090 and an optional
+first teacher. Shared `application.properties` is safe to commit; Render supplies its credentials through environment variables. The `local` profile loads `local.properties`.
+
+For a new checkout, copy `local.properties.example` to `local.properties` and enter your values. Existing local settings have been migrated. Then:
 
 ```sh
 ./scripts/create-local-db.sh   # once: creates the python_lecture role + database (asks for the postgres superuser password)
@@ -54,3 +56,5 @@ on purpose: NGCP's backend usually runs there.
 - Set a strong, stable `JWT_SECRET` from a secret manager. Never commit it.
 - Behind a proxy, set `server.forward-headers-strategy=framework` so rate limiting sees real client IPs.
 - Game scores are calculated in the browser. The API rejects impossible values, but a determined student could still submit a fake score.
+
+In IntelliJ, set the active Spring profile to `local` and the working directory to `python-lecture-backend`. From the command line, `./mvnw spring-boot:run -Dspring-boot.run.profiles=local` also works. Production must leave the `local` profile disabled.

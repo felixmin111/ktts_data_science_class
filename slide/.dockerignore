@@ -5,6 +5,7 @@
 **/.idea
 **/.DS_Store
 **/.env.local
+**/local.properties
 **/.env.*.local
 **/*.log
 **/.aws

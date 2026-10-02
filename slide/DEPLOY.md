@@ -10,7 +10,7 @@ The backend sleeps when idle, so the first visit can be slow.
 1. Create a free Neon project in Singapore (or the nearest available region).
    In its Connect dialog, select Java/JDBC and copy the database settings.
 2. Commit and push the application and these deployment files to the existing
-   GitHub repository. Do not commit `python-lecture-backend/.env.local` or secrets.
+   GitHub repository. Do not commit `python-lecture-backend/local.properties` or secrets.
 3. In Render, choose **New > Blueprint**, connect
    `felixmin111/ktts_data_science_class`, and set **Blueprint Path** to
    `slide/render.yaml`. The paths in this file are relative to the GitHub repo
@@ -37,7 +37,7 @@ From `slide`, with Docker running:
 
 ```sh
 docker build -t ktts-python-lecture .
-docker run --rm -p 10000:10000 --env-file python-lecture-backend/.env.local ktts-python-lecture
+docker run --rm -p 10000:10000 --env-file python-lecture-backend/local.properties ktts-python-lecture
 ```
 
 For this HTTP-only local check, set `COOKIE_SECURE=false` in the container's
